@@ -2,9 +2,7 @@
 
 {% block content %}
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <div class="row">
+                <div class="row row-cols-sm-2 row-cols-md-3 g-3">
                     {% for meal in meal_list %}
                     <div class="col-md-3">
                         <div class="card mb-4 h-100">
@@ -18,22 +16,16 @@
                                     <strong>Cooking time:</strong> {{ meal.cook_time }}
                                 </p>
                                 <div class="btn">
-                                    <a href="{% url 'meal_detail' meal.id %}" class="btn btn-sm btn-outline-secondary">View</a>
+                                    <a href="{% url 'meal_detail' meal.id %}" class="btn btn-outline-dark">View recipe</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                        {% if forloop.counter|divisibleby:4 %}
-                            </div>
-                            <div class="row">
-                        {% endif %}
                     {% endfor %}
-                </div>
-            </div>
         </div>
         {% if is_paginated %}
             <nav aria-label="Page navigation">
-                <ul class="pagination justify-content-center">
+                <ul class="pagination justify-content-center pt-4">
                     {% if page_obj.has_previous %}
                         <li><a href="?page={{ page_obj.previous_page_number }}" 
                             class="page-link">&laquo; PREV </a></li>

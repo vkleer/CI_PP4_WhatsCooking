@@ -9,6 +9,12 @@ class Ingredient(models.Model):
         return self.ingredient
 
 
+class IngredientToRecipe(models.Model):
+    ingredient = models.ForeignKey('Ingredient', on_delete=models.CASCADE)
+    meal = models.ForeignKey('Meal', on_delete=models.CASCADE)
+    amount = models.CharField(max_length=50)
+
+
 class MealType(models.Model):
     type = models.CharField(max_length=25, unique=True)
 
@@ -43,9 +49,10 @@ class Meal(models.Model):
         'image', default='placeholder'
     )
     description = models.TextField()
-    ingredients = models.ForeignKey(
-        Ingredient, on_delete=models.CASCADE
-    )
+    ingredients = models.ManyToManyField(
+        Ingredient,
+        through='IngredientToRecipe'
+        )
     type = models.ForeignKey(
         MealType, on_delete=models.CASCADE
     )

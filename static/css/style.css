@@ -1,6 +1,8 @@
-/* Base template */
+/* base template */
 
 .social-media > li {
     font-size: 1.6rem;
     vertical-align: bottom;
 }
+
+/* meal_detail template */

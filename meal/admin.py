@@ -25,4 +25,3 @@ admin.site.register(MealType)
 admin.site.register(Diet)
 admin.site.register(PrepTime)
 admin.site.register(CookTime)
-

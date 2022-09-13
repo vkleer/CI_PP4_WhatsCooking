@@ -25,6 +25,21 @@
             <div class="col card mb-4  mt-3 left top">
                 <div class="card-body">
                     <p class="card-text ">
+                        <h3>Ingredients</h3>
+                        {% for ingredient in meal.ingredients.all %}
+                            <ul class="instructions">
+                                <li>{{ ingredient }}</li>
+                            </ul>
+                        {% endfor %}
+                        {% for ingredients in recipe_ingredients.all %}
+                            <ul class="instructions">
+                                <li>{{ meal.name }}</li>
+                                <li>{{ ingredients.meal }}</li>
+                                <li>{{ ingredients.amount }}</li>
+                            </ul>
+                        {% endfor %}
+                        <hr>
+                        <h3>Instructions</h3>
                         {{ meal.description | safe }}
                     </p>
                 </div>

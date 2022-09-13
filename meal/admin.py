@@ -6,6 +6,7 @@ from django_summernote.admin import SummernoteModelAdmin
 @admin.register(Meal)
 class PostAdmin(SummernoteModelAdmin):
     summernote_fields = ('description')
+    search_fields = ['name']
 
 
 admin.site.register(Ingredient)

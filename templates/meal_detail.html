@@ -27,16 +27,15 @@
                     <p class="card-text ">
                         <h3>Ingredients</h3>
                         {% for ingredient in meal.ingredients.all %}
-                            <ul class="instructions">
-                                <li>{{ ingredient }}</li>
-                            </ul>
-                        {% endfor %}
-                        {% for ingredients in recipe_ingredients.all %}
-                            {% if ingredients.meal == meal %}
-                            <ul class="instructions">
-                                <li>{{ ingredients.amount }}</li>
-                            </ul>
-                            {% endif %}
+                            {% for ingredients in recipe_ingredients.all %}
+                                {% if ingredients.meal == meal %}
+                                    {% if ingredient == ingredients.ingredient %}
+                                    <ul class="instructions">
+                                        <li>{{ ingredients.amount }} {{ ingredient }}</li>
+                                    </ul>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
                         {% endfor %}
                         <hr>
                         <h3>Instructions</h3>

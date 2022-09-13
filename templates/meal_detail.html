@@ -1,0 +1,34 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+    <div>
+        <div class="container">
+            <div class="row g-0">
+                <div class="col-md-6">
+                    <h1 class="meal-name">
+                        {{ meal.name }}
+                    </h1>
+                    <p>
+                        <strong>Prep time:</strong>  {{ meal.prep_time }} <br>
+                        <strong>Cooking time:</strong> {{ meal.cook_time }} <br>
+                        <strong>Diet type:</strong> {{ meal.diet }}
+                    </p>
+                </div>
+                <div class="d-none d-md-block col-md-6">
+                    <img src="{{ meal.image.url }}" width="100%">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col card mb-4  mt-3 left top">
+                <div class="card-body">
+                    <p class="card-text ">
+                        {{ meal.description | safe }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

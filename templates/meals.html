@@ -7,15 +7,20 @@
                 <div class="row">
                     {% for meal in meal_list %}
                     <div class="col-md-3">
-                        <div class="card mb-4">
+                        <div class="card mb-4 h-100">
                             <img class="card-img-top" src=" {{ meal.image.url }}">
                             <div class="card-body">
                                 <h1 class="card-title">{{ meal.name }}</h1>
-                                <p class="card-text"></p>
+                                <p class="card-text">
+                                    <strong>Meal type:</strong> {{ meal.type }} <br>
+                                    <strong>Diet type:</strong> {{ meal.diet }} <br>
+                                    <strong>Prep time:</strong>  {{ meal.prep_time }} <br>
+                                    <strong>Cooking time:</strong> {{ meal.cook_time }}
+                                </p>
                             </div>
                         </div>
                     </div>
-                        {% if forloop.counter|divisibleby:2 %}
+                        {% if forloop.counter|divisibleby:4 %}
                             </div>
                             <div class="row">
                         {% endif %}

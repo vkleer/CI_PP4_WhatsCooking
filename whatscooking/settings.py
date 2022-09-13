@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'django.contrib.staticfiles',
     'mealplanner',
+    'meal',
 ]
 
 MIDDLEWARE = [

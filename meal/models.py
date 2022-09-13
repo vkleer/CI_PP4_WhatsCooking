@@ -56,7 +56,7 @@ class Meal(models.Model):
         PrepTime, on_delete=models.CASCADE
     )
     cook_time = models.ForeignKey(
-        CookTime().cook_time, on_delete=models.CASCADE
+        CookTime, on_delete=models.CASCADE
     )
 
     def __str__(self):

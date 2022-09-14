@@ -7,7 +7,6 @@ class MealList(generic.ListView):
     model = Meal
     queryset = Meal.objects.order_by('name')
     template_name = 'meals.html'
-    paginate_by = 8
 
 
 class MealDetail(View):

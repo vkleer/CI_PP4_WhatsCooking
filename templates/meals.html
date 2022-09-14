@@ -4,30 +4,22 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col md-2">
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Meal type
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                      <button class="dropdown-item" type="button">Any</button>
-                      <button class="dropdown-item" type="button">Breakfast</button>
-                      <button class="dropdown-item" type="button">Lunch</button>
-                      <button class="dropdown-item" type="button">Dinner</button>
-                      <button class="dropdown-item" type="button">Snack</button>
-                    </div>
-                  </div>
+                <p>Meal type:</p>
+                <select id="meal-type-select" onclick="filterMeals()">
+                    <option>Any</option>
+                    <option>Breakfast</option>
+                    <option>Lunch</option>
+                    <option>Dinner</option>
+                    <option>Snack</option>
+                </select>
             </div>
             <div class="col md-2">
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Diet
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                      <button class="dropdown-item" type="button">Any</button>
-                      <button class="dropdown-item" type="button">Vegetarian</button>
-                      <button class="dropdown-item" type="button">Vegan</button>
-                    </div>
-                  </div>
+                <p>Diet type:</p>
+                <select id="diet-type-select" onclick="filterMeals()">
+                    <option>Any</option>
+                    <option>Vegetarian</option>
+                    <option>Vegan</option>
+                </select>
             </div>
             <div class="col-md-8 mb-5">
                 <input class="form-control me-2" id="meal-search" type="search" placeholder="Search meals" aria-label="Search" onkeyup="searchMeals()">
@@ -35,16 +27,16 @@
         </div>
         <div id="meals-list" class="row row-cols-sm-2 row-cols-md-3 g-3">
             {% for meal in meal_list %}
-                <div class="col-md-3 meal-card">
+                <div class="col-md-3 meal-card meat-filter-any">
                     <div class="card mb-4 h-100">
                         <a href="{% url 'meal_detail' meal.id %}" class="btn btn-outline-dark h-100">
                             <img class="card-img-top" src="{{ meal.image.url }}">
                             <div class="card-body">
                                 <h1 class="card-title">{{ meal.name }}</h1>
                                 <p class="card-text">
-                                    <strong>Meal type:</strong> {{ meal.type }} <br>
+                                    <strong>Meal type:</strong> <span class="meal-type">{{ meal.type }}</span> <br>
                                     {% if meal.diet != None %}
-                                        <strong>Diet type:</strong> {{ meal.diet }} <br>
+                                        <strong>Diet type:</strong> <span class="diet-type">{{ meal.diet }}</span> <br>
                                     {% endif %}
                                     <strong>Prep time:</strong>  {{ meal.prep_time }} <br>
                                     <strong>Cooking time:</strong> {{ meal.cook_time }}

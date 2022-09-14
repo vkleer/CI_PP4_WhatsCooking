@@ -15,7 +15,6 @@ function filterMealType() {
             meal[i].classList.remove('meat-filter');
             meal[i].classList.add('meat-filter-any');        }
         else if (mealTypeVal === mealTypeOption) {
-            console.log(mealTypeVal);
             meal[i].style.display = '';
             meal[i].classList.add('meat-filter');
             meal[i].classList.remove('meat-filter-any');
@@ -40,23 +39,59 @@ function filterDietType() {
         let dietType = meal[i].getElementsByClassName('diet-type')[0];
         let dietTypeVal = dietType.textContent;
         if (dietTypeOption === 'Any') {
-            meal[i].style.display = '';
-            meal[i].classList.remove('diet-filter');
-            meal[i].classList.add('diet-filter-any');        }
-        else if (dietTypeVal === dietTypeOption) {
-            console.log(dietTypeVal);
-            meal[i].style.display = '';
-            meal[i].classList.add('diet-filter');
-            meal[i].classList.remove('diet-filter-any');
-            meal[i].classList.remove('meat-filter-any');
+            if (meal[i].classList.contains('meat-filter')) {
+                    meal[i].style.display = '';
+                    meal[i].classList.add('diet-filter-any');
+                    meal[i].classList.remove('diet-filter');
+            } else if (meal[i].classList.contains('meat-filter-any')) {
+                meal[i].style.display = '';
+                meal[i].classList.add('diet-filter-any');
+                meal[i].classList.remove('diet-filter');
+            }       
+        } else if (dietTypeVal === dietTypeOption) {
+            if (meal[i].classList.contains('meat-filter')) {
+                meal[i].style.display = '';
+                meal[i].classList.add('diet-filter');
+                meal[i].classList.remove('diet-filter-any');
+            }
         } else {
             meal[i].style.display = 'none';
             meal[i].classList.remove('diet-filter');
             meal[i].classList.remove('diet-filter-any');
-            meal[i].classList.remove('meat-filter-any');
         }
     }
 }
+
+// function filterDietType() {
+//     // Variables for diet type filter
+//     let dietTypeSelect = document.getElementById('diet-type-select');
+//     let dietTypeOption = dietTypeSelect.options[dietTypeSelect.selectedIndex].text;
+//     // Variables for meals
+//     let mealsList = document.getElementById('meals-list');
+//     let meal = mealsList.getElementsByClassName('meal-card');
+
+//     // Diet type filter
+//     for (i = 0; i < meal.length; i++) {
+//         let dietType = meal[i].getElementsByClassName('diet-type')[0];
+//         let dietTypeVal = dietType.textContent;
+//         if (dietTypeOption === 'Any') {
+//             meal[i].style.display = '';
+//             meal[i].classList.remove('diet-filter');
+//             meal[i].classList.add('diet-filter-any');        }
+//         else if (dietTypeVal === dietTypeOption) {
+//             console.log(dietTypeVal);
+//             meal[i].style.display = '';
+//             meal[i].classList.add('diet-filter');
+//             meal[i].classList.remove('diet-filter-any');
+//             meal[i].classList.remove('meat-filter-any');
+//         } else {
+//             meal[i].style.display = 'none';
+//             meal[i].classList.remove('diet-filter');
+//             meal[i].classList.remove('diet-filter-any');
+//             meal[i].classList.remove('meat-filter-any');
+//         }
+//     }
+// }
 
 function searchMeals() {
     // Variables for search field

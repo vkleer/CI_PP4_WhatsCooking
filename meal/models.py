@@ -23,7 +23,10 @@ class MealType(models.Model):
 
 
 class Diet(models.Model):
-    diet = models.CharField(max_length=25, unique=True)
+    diet = models.CharField(
+        max_length=25, blank=True, null=True, unique=True,
+        default=''
+        )
 
     def __str__(self):
         return self.diet
@@ -57,7 +60,8 @@ class Meal(models.Model):
         MealType, on_delete=models.CASCADE
     )
     diet = models.ForeignKey(
-        Diet, on_delete=models.CASCADE
+        Diet, blank=True, null=True,
+        on_delete=models.CASCADE
     )
     prep_time = models.ForeignKey(
         PrepTime, on_delete=models.CASCADE

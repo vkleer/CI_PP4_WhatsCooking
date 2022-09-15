@@ -21,4 +21,19 @@
     border-radius: .75rem;
   }
 
+.feature-background {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.8), 
+        rgba(0, 0, 0, 0.8)
+    ), 
+    url(https://content.wepik.com/statics/5398651/preview-page0.jpg)
+}
+.feature-background--white {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.95), 
+        rgba(255, 255, 255, 0.95)
+    ), 
+    url(https://content.wepik.com/statics/5398651/preview-page0.jpg)
+}
+
 /* meal_detail template */

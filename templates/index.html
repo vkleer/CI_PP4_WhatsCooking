@@ -3,12 +3,39 @@
 {% block content %}
     <div id="hero-container" class="jumbotron jumbotron-fluid">
         <div class="container py-5">
-            <h1 class="display-4 text-white">A meal prepping community</h1>
-            <p class="lead text-white">
+            <h1 class="text-white">A meal prepping community</h1>
+            <p class="lead fw-normal text-white">
                 Welcome to What's Cooking! We are passionate about meal prepping, and providing you with the best meal prepping tools.
             </p>
         </div>
     </div>
+    <div class="jumbotron jumbotron-fluid d-md-flex flex-md-equal">
+        <div class="feature-background col-md-6 bg-dark pt-3 px-3 pt-md-5 px-md-5 text-white text-center overflow-hidden">
+            <div class="layer"></div>
+          <div class="my-3 p-3">
+            <h2>Meal planner</h2>
+            <p class="lead">
+                How can you be a real meal prepper without a meal planner? Select the meals you want for each day of the week, 
+                and you will no longer forget What's Cooking for dinner. The plan you make can be edited at any time and will 
+                contain links to the recipes that you picked.
+            </p>
+                <a class="btn btn-outline-light" href="#">Create your meal plan</a>
+          </div>
+          <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+        </div>
+        <div class="feature-background--white col-md-6 bg-light pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+          <div class="my-3 p-3">
+            <h2>Carefully picked recipes</h2>
+            <p class="lead">
+                It's nice to have a meal planner, but how can you prep without a grocery list? Our grocery list tool 
+                automatically updates when you add a new meal to your meal planner, making sure you won't forget a single 
+                ingredient!
+            </p>
+            <a class="btn btn-outline-dark" href="#">Browse recipe list</a>
+          </div>
+          <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+        </div>
+      </div>
     <div class="container py-5" id="hanging-icons">
         <h2 class="pb-2 border-bottom">Our tools</h2>
         <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
@@ -23,8 +50,11 @@
                     and you will no longer forget What's Cooking for dinner. The plan you make can be edited at any time and will 
                     contain links to the recipes that you picked.
                 </p>
+                <p>
+                    Insert image of meal planner
+                </p>
                 <div>
-                    Insert image of Meal planner
+                    <a href="#" class="btn btn-large btn-secondary">Create your meal plan</a>
                 </div>
             </div>
         </div>
@@ -39,9 +69,12 @@
                     automatically updates when you add a new meal to your meal planner, making sure you won't forget a single 
                     ingredient!
                 </p>
-                <div>
+                <p>
                     Insert image of Grocery list
-                </div>
+                </p>
+                <!-- <div>
+                    <a href="#" class="btn btn-large btn-secondary">Grocery list</a>
+                </div> -->
             </div>
         </div>
         <div class="d-flex align-items-start">
@@ -55,8 +88,11 @@
                     from the best recipe websites that the internet can serve. Filter by breakfast, lunch, dinner, snacks, or 
                     even dietary requirements. Your next favorite meal is only a few clicks away!
                 </p>
+                <p>
+                    Insert image of meal list
+                </p>
                 <div>
-                    Insert image of Meal list
+                    <a href="#" class="btn btn-large btn-secondary">Check the meals</a>
                 </div>
             </div>
         </div>

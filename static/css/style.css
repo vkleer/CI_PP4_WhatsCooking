@@ -5,4 +5,10 @@
     vertical-align: bottom;
 }
 
+/* index template */
+
+#hero-container {
+    background-color: #4d4d4d;
+}
+
 /* meal_detail template */

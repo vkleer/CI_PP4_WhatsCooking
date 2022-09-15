@@ -11,29 +11,19 @@
     background-color: #4d4d4d;
 }
 
-.icon-square {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 3rem;
-    height: 3rem;
-    font-size: 1.5rem;
-    border-radius: .75rem;
-  }
+.tool-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.tool-content:last-child {
+    text-align: center;
+    padding-bottom: 20px;
+}
+.rounded-tool {
+    border-radius: 1rem;
+}
 
-.feature-background {
-    background-image: linear-gradient(
-        rgba(0, 0, 0, 0.8), 
-        rgba(0, 0, 0, 0.8)
-    ), 
-    url(https://content.wepik.com/statics/5398651/preview-page0.jpg)
-}
-.feature-background--white {
-    background-image: linear-gradient(
-        rgba(255, 255, 255, 0.95), 
-        rgba(255, 255, 255, 0.95)
-    ), 
-    url(https://content.wepik.com/statics/5398651/preview-page0.jpg)
-}
 
 /* meal_detail template */

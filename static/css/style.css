@@ -11,4 +11,14 @@
     background-color: #4d4d4d;
 }
 
+.icon-square {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    border-radius: .75rem;
+  }
+
 /* meal_detail template */

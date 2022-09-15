@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def MealPlanner(request):
+    return render(request, 'meal_planner.html')

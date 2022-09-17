@@ -5,6 +5,10 @@
     vertical-align: bottom;
 }
 
+.msg-col {
+    margin-bottom: -75px;
+}
+
 /* index template */
 
 .hero-container {

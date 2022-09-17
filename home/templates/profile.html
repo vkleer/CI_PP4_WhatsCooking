@@ -4,38 +4,59 @@
 {% load account socialaccount %}
 
 {% block content %}
-  <div class="jumbotron jumbotron-fluid hero-container">
-    <div class="container-fluid p-5">
-        <h1 class="text-white display-2">{{ user.username }}'s profile</h1>
-        <p class="lead text-white">
-          You can find your account details here.
-        </p>
-    </div>
-  </div>
-  <div class="container py-5">
-    <div class="row pb-5">
-        <div class="col-md-8 offset-md-2">
-          <div class="card login-card bg-light">
-            <div class="card-body">
-              <form class="login" method="POST" action="{% url 'account_login' %}">
-                <div class="login-container">
-                    <p>
-                        <strong>Username:</strong> {{ user.username }}
-                    </p>
-                    {% if user.email %}
-                        <p>
-                            <strong>Email:</strong> {{ user.email }}
-                        </p>
-                    {% endif %}
-                    <p>
-                        <strong>Created on:</strong> {{ user.date_joined }}
-                    </p>
-                </div>
-              </form>
-            </div>
-          </div>
-          
+    <div class="jumbotron jumbotron-fluid hero-container">
+        <div class="container-fluid p-5">
+            <h1 class="text-white display-2">{{ user.username }}'s profile</h1>
+            <p class="lead text-white">
+            You can find your account details here.
+            </p>
         </div>
     </div>
-  </div>
+    <div class="container py-5">
+        <div class="row pb-5">
+            <div class="col-md-8 offset-md-2">
+                <div class="card login-card bg-light">
+                    <div class="card-body">
+                        <form class="login" method="POST" action="{% url 'account_login' %}">
+                            <div class="login-container">
+                                <p>
+                                    <strong>Username:</strong> {{ user.username }}
+                                </p>
+                                {% if user.email %}
+                                    <p>
+                                        <strong>Email:</strong> {{ user.email }}
+                                    </p>
+                                {% endif %}
+                                <p>
+                                    <strong>Created on:</strong> {{ user.date_joined }}
+                                </p>
+                                <!-- Button opens modal to confirm account deletion -->
+                                <button type="button" class="btn btn-danger w-100" data-toggle="modal" data-target="#deletionModal">
+                                    Delete account
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="deletionModal" tabindex="-1" role="dialog" aria-labelledby="deletionModelLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <form method="post" action="{% url 'delete_user' user %}">
+                {% csrf_token %}
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <p>
+                            Are you sure you want to delete your account? This action cannot be undone.
+                        </p>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-danger">Yes, delete my account</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 {% endblock %}

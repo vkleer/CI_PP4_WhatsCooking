@@ -9,6 +9,20 @@
     margin-bottom: -75px;
 }
 
+/* reusable classes */
+
+.modal-body {
+    text-align: center;
+}
+.modal-body > p {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.modal-footer > button {
+    margin: 10px 20px;
+}
+
 /* index template */
 
 .hero-container {
@@ -79,12 +93,19 @@ input[name="login"]:focus, input[name="password"]:focus {
     margin-bottom: 0;
  }
 
+ .errorlist {
+    color: #dc3545!important;
+ }
+
  /* log out template */
 
  .logout-text {
     padding: 10px 0;
     text-align: center;
-
  }
+
+/* profile template */
+
+
 
 /* meal_detail template */

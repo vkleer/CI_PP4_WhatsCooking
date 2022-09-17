@@ -16,6 +16,20 @@ def UserProfile(request, pk):
         })
 
     else:
-        messages.error(request,
-                       "You can only access your own profile.")
+        messages.error(
+            request,
+            "You can only access your own profile."
+        )
+        return redirect('home')
+
+
+def DeleteUser(request, pk):
+    user = User.objects.get(username=pk)
+
+    if request.method == "POST":
+        user.delete()
+        messages.info(
+            request,
+            "Your account has been deleted. Feel free to come back any time!"
+        )
         return redirect('home')

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block content %}
+  <div class="jumbotron jumbotron-fluid hero-container">
+    <div class="container-fluid p-5">
+        <h1 class="text-white display-2">{{ user.username }}'s profile</h1>
+        <p class="lead text-white">
+          You can find your account details here.
+        </p>
+    </div>
+  </div>
+  <div class="container py-5">
+    <div class="row pb-5">
+        <div class="col-md-8 offset-md-2">
+          <div class="card login-card bg-light">
+            <div class="card-body">
+              <form class="login" method="POST" action="{% url 'account_login' %}">
+                <div class="login-container">
+                    <p>
+                        <strong>Username:</strong> {{ user.username }}
+                    </p>
+                    {% if user.email %}
+                        <p>
+                            <strong>Email:</strong> {{ user.email }}
+                        </p>
+                    {% endif %}
+                    <p>
+                        <strong>Created on:</strong> {{ user.date_joined }}
+                    </p>
+                </div>
+              </form>
+            </div>
+          </div>
+          
+        </div>
+    </div>
+  </div>
+{% endblock %}

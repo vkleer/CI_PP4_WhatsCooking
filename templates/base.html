@@ -31,6 +31,9 @@
                       <a class="nav-link" href="/meals">Recipe list</a>
                     </li>
                     <li>
+                      <a class="nav-link" href="/profile/{{ user.username }}">Profile</a>
+                    </li>
+                    <li>
                         <a class="nav-link" href="{% url 'account_logout' %}">Log out</a>
                     </li>
                   {% else %}

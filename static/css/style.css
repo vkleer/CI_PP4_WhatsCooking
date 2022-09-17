@@ -75,4 +75,12 @@ input[name="login"]:focus, input[name="password"]:focus {
     margin-bottom: 0;
  }
 
+ /* log out template */
+
+ .logout-text {
+    padding: 10px 0;
+    text-align: center;
+
+ }
+
 /* meal_detail template */

@@ -19,17 +19,17 @@
         <div class="col-md-8 offset-md-2">
           <div class="card login-card bg-light">
             <div class="card-body">
-                <form class="login" method="POST" action="{% url 'account_login' %}">
-                  <div class="login-container">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    {% if redirect_field_value %}
-                      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                    {% endif %}
-                    <button class="btn btn-block btn-login" type="submit">{% trans "Log in" %}</button>
-                    <p class="login-signup">{% blocktrans %}If you have not created an account yet, then please
-                    <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
-                  </div>
+              <form class="login" method="POST" action="{% url 'account_login' %}">
+                <div class="login-container">
+                  {% csrf_token %}
+                  {{ form.as_p }}
+                  {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                  {% endif %}
+                  <button class="btn btn-block btn-login" type="submit">{% trans "Log in" %}</button>
+                  <p class="login-signup">{% blocktrans %}If you have not created an account yet, then please
+                  <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+                </div>
               </form>
             </div>
           </div>

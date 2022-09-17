@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.views import generic
-from meal.models import Meal
+from .models import MealOption
 
 
-class MealPlanner(generic.ListView):
-    model = Meal
-    queryset = Meal.objects.order_by('name')
+class MealPlannerView(generic.ListView):
+    model = MealOption
+    queryset = MealOption.objects.all()
     template_name = 'meal_planner.html'

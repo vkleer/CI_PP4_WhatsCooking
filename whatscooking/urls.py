@@ -22,4 +22,5 @@ urlpatterns = [
     path('mealplanner/', include('mealplanner.urls'), name='meal_planner'),
     path('meals/', include('meal.urls'), name='meals'),
     path('', include('home.urls'), name='home'),
+    path('accounts/', include('allauth.urls')),
 ]

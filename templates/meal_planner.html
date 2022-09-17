@@ -10,56 +10,52 @@
         </div>
     </div>
     <div class="container py-5">
+        <!-- <form action="" method="post">{% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Create" />
+        </form> -->
         <div class="row">
             <div class="col">
                 <!-- <h2>Specify the picked date</h2> -->
                 <p>Breakfast</p>
                 <ul>
-                    <li>
-                        <select name="item_id">
-                            {% for meal in meal_list %}
-                                {% if meal.type|stringformat:'s' == 'Breakfast' %}
-                                    <option value="{{ meal.id }}">{{ meal.name }}</option>
-                                {% endif %}
-                            {% endfor %}
-                        </select>
-                    </li>
+                    {% for option in mealoption_list %}
+                        {% if option.meal_type|stringformat:'s' == 'Breakfast' %}
+                            <li>
+                                {{ option.meal_name }}
+                            </li>
+                        {% endif %}
+                    {% endfor %}
                 </ul>
                 <p>Lunch</p>
                 <ul>
-                    <li>
-                        <select name="item_id">
-                            {% for meal in meal_list %}
-                                {% if meal.type|stringformat:'s' == 'Lunch' %}
-                                    <option value="{{ meal.id }}">{{ meal.name }}</option>
-                                {% endif %}
-                            {% endfor %}
-                        </select>
-                    </li>
+                    {% for option in mealoption_list %}
+                        {% if option.meal_type|stringformat:'s' == 'Lunch' %}
+                            <li>
+                                {{ option.meal_name }}
+                            </li>
+                        {% endif %}
+                    {% endfor %}
                 </ul>
                 <p>Dinner</p>
                 <ul>
-                    <li>
-                        <select name="item_id">
-                            {% for meal in meal_list %}
-                                {% if meal.type|stringformat:'s' == 'Dinner' %}
-                                    <option value="{{ meal.id }}">{{ meal.name }}</option>
-                                {% endif %}
-                            {% endfor %}
-                        </select>
-                    </li>
+                    {% for option in mealoption_list %}
+                        {% if option.meal_type|stringformat:'s' == 'Dinner' %}
+                            <li>
+                                {{ option.meal_name }}
+                            </li>
+                        {% endif %}
+                    {% endfor %}
                 </ul>
                 <p>Snacks</p>
                 <ul>
-                    <li>
-                        <select name="item_id">
-                            {% for meal in meal_list %}
-                                {% if meal.type|stringformat:'s' == 'Snack' %}
-                                    <option value="{{ meal.id }}">{{ meal.name }}</option>
-                                {% endif %}
-                            {% endfor %}
-                        </select>
-                    </li>
+                    {% for option in mealoption_list %}
+                        {% if option.meal_type|stringformat:'s' == 'Snack' %}
+                            <li>
+                                {{ option.meal_name }}
+                            </li>
+                        {% endif %}
+                    {% endfor %}
                 </ul>
             </div>
         </div>

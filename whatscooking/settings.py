@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'mealplanner',
     'meal',
+    'home',
 ]
 
 SITE_ID = 1

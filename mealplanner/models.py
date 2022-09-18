@@ -26,18 +26,18 @@ def create_mealplanner(sender, instance=None, created=False, **kwargs):
 
 
 class MealOption(models.Model):
-    meal_plan = models.ForeignKey(
-        'MealPlan', on_delete=models.CASCADE,
-        related_name='meal_plan',
-        default=''
-    )
-    meal_name = models.ForeignKey(
+    meal = models.ForeignKey(
         Meal, on_delete=models.CASCADE,
-        related_name='meal_name'
+        related_name='meal',
     )
 
     def __str__(self):
-        return self.meal_name
+        return self.meal.name
+
+
+class MealOptionToMealPlan(models.Model):
+    meal_option = models.ForeignKey('MealOption', on_delete=models.CASCADE)
+    meal_plan = models.ForeignKey('MealPlan', on_delete=models.CASCADE)
 
 
 class MealPlan(models.Model):
@@ -47,11 +47,11 @@ class MealPlan(models.Model):
     meal_planner = models.ForeignKey(
         'MealPlanner', on_delete=models.CASCADE,
         related_name='meal_planner',
-        default=''
     )
     date = models.CharField(max_length=25, unique=True)
     meal_options = models.ManyToManyField(
-        MealOption, blank=True,
+        MealOption,
+        through='MealOptionToMealPlan'
         )
 
     def __str__(self):

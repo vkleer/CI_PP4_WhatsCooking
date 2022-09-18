@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.dispatch import receiver
 from django.db.models.signals import post_save
 from meal.models import Meal
+from datetime import datetime
 
 
 class MealPlanner(models.Model):
@@ -48,11 +49,11 @@ class MealPlan(models.Model):
         'MealPlanner', on_delete=models.CASCADE,
         related_name='meal_planner',
     )
-    date = models.CharField(max_length=25, unique=True)
+    date = models.DateField()
     meal_options = models.ManyToManyField(
         MealOption,
         through='MealOptionToMealPlan'
         )
 
     def __str__(self):
-        return 'Meal plan ' + self.date + ' for ' + self.meal_planner.user.username
+        return 'Meal plan ' + datetime.strptime(format(self.date), '%Y-%M-%d').strftime('%d/%M/%Y') + ' for ' + self.meal_planner.user.username

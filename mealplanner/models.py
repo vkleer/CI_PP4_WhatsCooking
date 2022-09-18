@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.dispatch import receiver
+from django.db.models.signals import post_save
 from meal.models import Meal
 
 
@@ -15,6 +17,12 @@ class MealPlanner(models.Model):
 
     def __str__(self):
         return self.user.username
+
+
+@receiver(post_save, sender=User)
+def create_mealplanner(sender, instance=None, created=False, **kwargs):
+    if created:
+        MealPlanner.objects.create(user=instance,)
 
 
 class MealOption(models.Model):

@@ -60,6 +60,7 @@ SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '../../mealplanner/'
 LOGOUT_REDIRECT_URL = '/'
+ACCOUNT_EMAIL_REQUIRED = True
 
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-info',

@@ -5,7 +5,6 @@
 {% block head_title %}{% trans "Log out" %}{% endblock %}
 
 {% block content %}
-<p></p>
   <div class="jumbotron jumbotron-fluid hero-container">
     <div class="container-fluid p-5">
         <h1 class="text-white display-2">{% trans "Log out" %}</h1>
@@ -19,13 +18,15 @@
         <div class="col-md-8 offset-md-2">
           <div class="card login-card bg-light">
             <div class="card-body">
-              <form method="post" action="{% url 'account_logout' %}">
-                {% csrf_token %}
-                {% if redirect_field_value %}
-                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-                {% endif %}
-                <button type="submit" class="btn btn-block btn-login">{% trans 'Log out' %}</button>
-              </form>
+              <div class="login-container">
+                <form method="post" action="{% url 'account_logout' %}">
+                  {% csrf_token %}
+                  {% if redirect_field_value %}
+                  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+                  {% endif %}
+                  <button type="submit" class="btn btn-block btn-login">{% trans 'Log out' %}</button>
+                </form>
+              </div>
             </div>
           </div>
           

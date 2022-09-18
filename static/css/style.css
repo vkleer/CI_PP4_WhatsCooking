@@ -57,12 +57,14 @@
 
 label[for="id_login"], label[for="id_password"], 
 label[for="id_username"], label[for="id_password1"], 
-label[for="id_password2"], label[for="id_email"] {
+label[for="id_password2"], label[for="id_email"],
+label[for="id_first_name"] {
     display: none;
 }
 input[name="login"], input[name="password"],
 input[name="username"], input[name="password1"],
-input[name="password2"], input[name="email"] {
+input[name="password2"], input[name="email"],
+input[name="first_name"] {
     width: 100%;
     padding: 0.375rem 0.75rem;
     font-size: 1rem;

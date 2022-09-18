@@ -61,6 +61,7 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '../../mealplanner/'
 LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_SIGNUP_FORM_CLASS = 'home.forms.SignupForm'
 
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-info',

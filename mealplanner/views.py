@@ -11,11 +11,21 @@ class MealPlannerView(generic.View):
     def get(self, request):
         today = datetime.today()
         calendar = Calendar.objects.get(user=request.user)
+        week = [
+            calendar.day_one,
+            calendar.day_two,
+            calendar.day_three,
+            calendar.day_four,
+            calendar.day_five,
+            calendar.day_six,
+            calendar.day_seven,
+        ]
         context = {
             'mealplan_list': MealPlan.objects.all(),
             'today': today,
             'calendar_form': CalendarForm(initial={'picked_date': calendar.picked_date}),
-            'current_picked_date': calendar.picked_date,
+            'user_calendar': calendar,
+            'week': week,
         }
         return render(request, 'meal_planner.html', context)
 

@@ -67,28 +67,18 @@ class Calendar(models.Model):
     day_five = models.DateField(blank=True, null=True)
     day_six = models.DateField(blank=True, null=True)
     day_seven = models.DateField(blank=True, null=True)
-    week = {
-        'day_one': day_one,
-        'day_two': day_two,
-        'day_three': day_three,
-        'day_four': day_four,
-        'day_five': day_five,
-        'day_six': day_six,
-        'day_seven': day_seven,
-    }
 
     def __str__(self):
         return 'Calendar for ' + self.user.username
 
     def clean(self):
-        if not self.day_one:
-            self.day_one = self.picked_date
-            self.day_two = self.day_one + timedelta(days=1)
-            self.day_three = self.day_one + timedelta(days=2)
-            self.day_four = self.day_one + timedelta(days=3)
-            self.day_five = self.day_one + timedelta(days=4)
-            self.day_six = self.day_one + timedelta(days=5)
-            self.day_seven = self.day_one + timedelta(days=6)
+        self.day_one = self.picked_date
+        self.day_two = self.day_one + timedelta(days=1)
+        self.day_three = self.day_one + timedelta(days=2)
+        self.day_four = self.day_one + timedelta(days=3)
+        self.day_five = self.day_one + timedelta(days=4)
+        self.day_six = self.day_one + timedelta(days=5)
+        self.day_seven = self.day_one + timedelta(days=6)
 
     def save(self, **kwargs):
         self.clean()

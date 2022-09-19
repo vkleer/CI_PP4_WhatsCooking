@@ -109,5 +109,11 @@ input[name="login"]:focus, input[name="password"]:focus {
 /* profile template */
 
 
+/* meal_planner template */
+
+#meal-planner {
+    width: 420px;
+}
+
 
 /* meal_detail template */

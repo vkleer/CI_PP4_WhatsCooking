@@ -19,7 +19,6 @@
                     {{ calendar_form.as_p }}
                     <button type="submit" class="button">Pick day</button>
                 </form>
-                
 
                 <div class="table-responsive">
                     <table class="table align-middle">
@@ -32,36 +31,24 @@
                         </thead>
                     
                         <tbody>
-                            <tr>
-                                {% for plan in mealplan_list %}
-                                    {% for day in week %}
-                                        {% if plan.date|date:"d/m/Y" == day|date:"d/m/Y" %}
-                                            {% if forloop.counter >= 1 and forloop.counter <= 8 %}
-                                                <td class="border-0">
-                                                    <p>Breakfast</p>
-                                                    <ul>
-                                                        {% for meal in plan.meal_options.all %}
-                                                            <li>
-                                                                {{ meal }}
-                                                            </li>
-                                                        {% endfor %}
-                                                    </ul>
-                                                    <p>Lunch</p>
-                                                    <ul>
-                                                        
-                                                    </ul>
-                                                    <p>Dinner</p>
-                                                    <ul>
-
-                                                    </ul>
-                                                    <p>Snack</p>
-                                                    <ul>
-
-                                                    </ul>
-                                                </td>
+                            <tr id="meal-planner-calendar">
+                                {% for day in week %}
+                                    <td class="border-0" style="vertical-align:top">
+                                        {% for plan in mealplan_list %}
+                                            {% if plan.date|date:"d/m/Y" == day|date:"d/m/Y" %}
+                                                <span class="day-not-empty"></span>
+                                                <p>Meal plan</p>
+                                                <ul>
+                                                    {% for meal in plan.meal_options.all %}
+                                                        <li>
+                                                            {{ meal }}
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
                                             {% endif %}
-                                        {% endif %}
-                                    {% endfor %}
+                                        {% endfor %}
+                                        <a href="#" class="btn btn-dark">Create meal plan</a>
+                                    </td>
                                 {% endfor %}
                             </tr>   
                         </tbody>  

@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from django.views import generic
 from datetime import datetime
 from django.db import IntegrityError
@@ -10,10 +10,11 @@ from .forms import CalendarForm
 class MealPlannerView(generic.View):
     def get(self, request):
         today = datetime.today()
+        calendar = Calendar.objects.get(user=request.user)
         context = {
             'mealplan_list': MealPlan.objects.all(),
             'today': today,
-            'calendar_form': CalendarForm(),
+            'calendar_form': CalendarForm(initial={'picked_date': calendar.picked_date}),
         }
         return render(request, 'meal_planner.html', context)
 
@@ -24,7 +25,7 @@ class MealPlannerView(generic.View):
         if calendar_form.is_valid():
             try:
                 calendar_form.save()
-                return redirect('meal_planner')
+                return redirect(reverse('meal_planner'))
             except IntegrityError as e:
                 messages.error(request, 'You already have a plan available on this day.')
 

@@ -20,12 +20,6 @@ class MealPlanner(models.Model):
         return self.user.username
 
 
-@receiver(post_save, sender=User)
-def create_mealplanner(sender, instance=None, created=False, **kwargs):
-    if created:
-        MealPlanner.objects.create(user=instance,)
-
-
 class MealOption(models.Model):
     meal = models.ForeignKey(
         Meal, on_delete=models.CASCADE,
@@ -99,3 +93,10 @@ class Calendar(models.Model):
     def save(self, **kwargs):
         self.clean()
         return super().save(**kwargs)
+
+
+@receiver(post_save, sender=User)
+def create_models(sender, instance=None, created=False, **kwargs):
+    if created:
+        MealPlanner.objects.create(user=instance,)
+        Calendar.objects.create(user=instance,)

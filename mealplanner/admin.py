@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import MealPlanner, MealOption, MealPlan, MealOptionToMealPlan
+from .models import *
 
 
 class MealOptionToMealPlanInline(admin.TabularInline):
@@ -15,3 +15,4 @@ class MealPlanAdmin(admin.ModelAdmin):
 admin.site.register(MealPlanner)
 admin.site.register(MealOption)
 admin.site.register(MealOptionToMealPlan)
+admin.site.register(Calendar)

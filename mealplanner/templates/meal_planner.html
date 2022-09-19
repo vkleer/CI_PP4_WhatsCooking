@@ -19,54 +19,54 @@
                     {{ calendar_form.as_p }}
                     <button type="submit" class="button">Pick day</button>
                 </form>
-
                 
-                <h2>Meal plan for {{ current_picked_date|date:"d/m/Y" }}</h2>
-                <p>Breakfast</p>
-                <ul>
-                    {% for plan in mealplan_list %}
-                        {% if current_picked_date|date:"d/m/Y" == plan.date|date:"d/m/Y" %}
-                            {% if plan.meal_planner|stringformat:'s' == user.username %}
-                                {% for meal in plan.meal_options.all %}
-                                    <li>
-                                        {{ meal }}
-                                    </li>
+
+                <div class="table-responsive">
+                    <table class="table align-middle">
+                        <thead>
+                            <tr>
+                                {% for day in week %}
+                                    <th>{{ day|date:"d/m/Y" }}</th>
                                 {% endfor %}
-                            {% endif %}
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-                </ul>
-                <p>Lunch</p>
-                <ul>
-                    {% for option in mealoption_list %}
-                        {% if option.meal_type|stringformat:'s' == 'Lunch' %}
-                            <li>
-                                {{ option.meal_name }}
-                            </li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-                <p>Dinner</p>
-                <ul>
-                    {% for option in mealoption_list %}
-                        {% if option.meal_type|stringformat:'s' == 'Dinner' %}
-                            <li>
-                                {{ option.meal_name }}
-                            </li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-                <p>Snacks</p>
-                <ul>
-                    {% for option in mealoption_list %}
-                        {% if option.meal_type|stringformat:'s' == 'Snack' %}
-                            <li>
-                                {{ option.meal_name }}
-                            </li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
+                            </tr>
+                        </thead>
+                    
+                        <tbody>
+                            <tr>
+                                {% for plan in mealplan_list %}
+                                    {% for day in week %}
+                                        {% if plan.date|date:"d/m/Y" == day|date:"d/m/Y" %}
+                                            {% if forloop.counter >= 1 and forloop.counter <= 8 %}
+                                                <td class="border-0">
+                                                    <p>Breakfast</p>
+                                                    <ul>
+                                                        {% for meal in plan.meal_options.all %}
+                                                            <li>
+                                                                {{ meal }}
+                                                            </li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                    <p>Lunch</p>
+                                                    <ul>
+                                                        
+                                                    </ul>
+                                                    <p>Dinner</p>
+                                                    <ul>
+
+                                                    </ul>
+                                                    <p>Snack</p>
+                                                    <ul>
+
+                                                    </ul>
+                                                </td>
+                                            {% endif %}
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endfor %}
+                            </tr>   
+                        </tbody>  
+                    </table>
+                </div>
             </div>
         </div>
     </div>

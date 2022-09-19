@@ -42,3 +42,16 @@ class MealPlannerView(generic.View):
 
         else:
             messages.error(request, 'Something went wrong.')
+
+
+class EditMealPlan(generic.View):
+    def get(self, request, meal_plan_id):
+        meal_plan = MealPlan.objects.get(id=meal_plan_id)
+        return render(request, 'edit_meal_plan.html', {
+            'meal_plan': meal_plan
+        })
+
+    def post(self, request, meal_plan_id):
+        meal_plan_id = request.cleaned_data['meal_plan_id']
+        request.session['meal_plan.id'] = meal_plan_id
+        return redirect(reverse('meal_planner'))

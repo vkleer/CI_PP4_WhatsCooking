@@ -16,7 +16,7 @@
                 <form method="POST" action="{% url 'meal_planner' %}">
                     <h5>Please pick a day:</h5>
                     {% csrf_token %}
-                    {{ calendar_form.as_p }}
+                    {{ calendar_form }}
                     <button type="submit" class="button">Pick day</button>
                 </form>
 
@@ -33,10 +33,9 @@
                         <tbody>
                             <tr id="meal-planner-calendar">
                                 {% for day in week %}
-                                    <td class="border-0" style="vertical-align:top">
+                                    <td class="border-0">
                                         {% for plan in mealplan_list %}
                                             {% if plan.date|date:"d/m/Y" == day|date:"d/m/Y" %}
-                                                <span class="day-not-empty"></span>
                                                 <p>Meal plan</p>
                                                 <ul>
                                                     {% for meal in plan.meal_options.all %}
@@ -45,9 +44,11 @@
                                                         </li>
                                                     {% endfor %}
                                                 </ul>
+                                                <input type="hidden" name="meal_plan_id" value="{{ plan.id }}">
                                             {% endif %}
                                         {% endfor %}
-                                        <a href="#" class="btn btn-dark">Create meal plan</a>
+                                            {% csrf_token %}
+                                            <a href="" class="btn btn-dark"></a>
                                     </td>
                                 {% endfor %}
                             </tr>   

@@ -15,6 +15,7 @@ class MealPlannerView(generic.View):
             'mealplan_list': MealPlan.objects.all(),
             'today': today,
             'calendar_form': CalendarForm(initial={'picked_date': calendar.picked_date}),
+            'current_picked_date': calendar.picked_date,
         }
         return render(request, 'meal_planner.html', context)
 

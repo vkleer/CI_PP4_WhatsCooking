@@ -10,22 +10,32 @@
         </div>
     </div>
     <div class="container py-5">
-        <!-- <form action="" method="post">{% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Create" />
-        </form> -->
         <div class="row">
             <div class="col">
-                <!-- <h2>Specify the picked date</h2> -->
+
+                <form method="POST" action="{% url 'meal_planner' %}">
+                    <h5>Please pick a day:</h5>
+                    {% csrf_token %}
+                    {{ calendar_form.as_p }}
+                    <button type="submit" class="button">Pick day</button>
+                </form>
+
+                
+                <h2>Meal plan for {{ current_picked_date|date:"d/m/Y" }}</h2>
                 <p>Breakfast</p>
                 <ul>
-                    {% for option in mealoption_list %}
-                        {% if option.meal_type|stringformat:'s' == 'Breakfast' %}
-                            <li>
-                                {{ option.meal_name }}
-                            </li>
+                    {% for plan in mealplan_list %}
+                        {% if current_picked_date|date:"d/m/Y" == plan.date|date:"d/m/Y" %}
+                            {% if plan.meal_planner|stringformat:'s' == user.username %}
+                                {% for meal in plan.meal_options.all %}
+                                    <li>
+                                        {{ meal }}
+                                    </li>
+                                {% endfor %}
+                            {% endif %}
                         {% endif %}
                     {% endfor %}
+                </ul>
                 </ul>
                 <p>Lunch</p>
                 <ul>
@@ -60,11 +70,4 @@
             </div>
         </div>
     </div>
-    <!-- <form method="POST">
-        <select name="item_id">
-        {% for meal in meal_list %}
-            <option value="{{ meal.id }}">{{ meal.name }}</option>
-        {% endfor %}
-        </select>
-    </form> -->
 {% endblock content %}

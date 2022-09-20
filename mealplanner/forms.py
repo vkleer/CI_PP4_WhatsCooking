@@ -1,5 +1,5 @@
 from django import forms
-from .models import Calendar
+from .models import Calendar, MealPlan
 
 class DateInput(forms.DateInput):
     input_type = 'date'
@@ -11,3 +11,8 @@ class CalendarForm(forms.ModelForm):
         widgets = {
             'picked_date': DateInput()
         }
+
+class MealPlanForm(forms.ModelForm):
+    class Meta:
+        model = MealPlan
+        fields = ['meal_options']

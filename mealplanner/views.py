@@ -4,8 +4,9 @@ from django.views import generic
 from datetime import datetime
 from django.db import IntegrityError
 from django.contrib import messages
-from django.forms import formset_factory
-from .models import MealPlan, Calendar
+# from django.forms import formset_factory
+from django.forms import inlineformset_factory
+from .models import MealPlan, MealOptionToMealPlan, Calendar
 from .forms import CalendarForm, MealPlanForm
 
 
@@ -48,27 +49,19 @@ class MealPlannerView(generic.View):
 
 class EditMealPlan(generic.View):
     def get(self, request, meal_plan_id):
-        MealPlanFormset = forms.inlineformset_factory(MealPlan, MealPlan.meal_options.through, exclude=[])
+        MealOptionFormSet = inlineformset_factory(MealPlan, MealOptionToMealPlan, fields=('meal_option',), extra=9, max_num=10)
         meal_plan = MealPlan.objects.get(id=meal_plan_id)
-        meal_options_formset = MealPlanFormset(instance=meal_plan)
+        formset = MealOptionFormSet(instance=meal_plan)
         context = {
             'meal_plan': meal_plan,
-            'meal_plan_form': MealPlanForm(instance=meal_plan),
-            'formset': meal_options_formset,
+            'formset': formset,
         }
         return render(request, 'edit_meal_plan.html', context)
 
     def post(self, request, meal_plan_id):
+        MealOptionFormSet = inlineformset_factory(MealPlan, MealOptionToMealPlan, fields=('meal_option',), extra=9, max_num=10)
         meal_plan = MealPlan.objects.get(id=meal_plan_id)
-        meal_plan_form = MealPlanForm(request.POST, instance=meal_plan)
-
-        if meal_plan_form.is_valid():
-            try:
-                meal_plan_form.save()
-                return redirect(reverse('meal_planner'))
-            except IntegrityError as e:
-                messages.error(request, 'You already have a plan available on this day.')
-
-        else:
-            messages.error(request, 'Something went wrong.')
-
+        formset = MealOptionFormSet(request.POST, instance=meal_plan)
+        if formset.is_valid():
+            formset.save()
+            return redirect(reverse('meal_planner'))

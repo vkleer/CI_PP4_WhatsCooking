@@ -5,7 +5,6 @@ function getCalendarCells() {
     for (i = 0; i < cells.length; i++) {
         mealPlanButton = cells[i].querySelector('.btn');
         mealPlanId = cells[i].querySelector('input[name=meal_plan_id]')
-        console.log(mealPlanId)
         if (cells[i].children.length > 2 ) {
             cells[i].style.cssText = 'vertical-align:top';
             mealPlanButton.innerHTML = 'Edit plan';

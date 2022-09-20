@@ -24,6 +24,7 @@ class MealOption(models.Model):
     meal = models.ForeignKey(
         Meal, on_delete=models.CASCADE,
         related_name='meal',
+        blank=True, null=True
     )
 
     def __str__(self):
@@ -31,7 +32,7 @@ class MealOption(models.Model):
 
 
 class MealOptionToMealPlan(models.Model):
-    meal_option = models.ForeignKey('MealOption', on_delete=models.CASCADE)
+    meal_option = models.ForeignKey('MealOption', on_delete=models.CASCADE, blank=True, null=True)
     meal_plan = models.ForeignKey('MealPlan', on_delete=models.CASCADE)
 
 
@@ -46,7 +47,8 @@ class MealPlan(models.Model):
     date = models.DateField()
     meal_options = models.ManyToManyField(
         MealOption,
-        through='MealOptionToMealPlan'
+        through='MealOptionToMealPlan',
+        blank=True
         )
 
     def __str__(self):

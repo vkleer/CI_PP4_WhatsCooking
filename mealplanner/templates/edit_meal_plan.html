@@ -12,29 +12,18 @@
     <div class="container py-5">
         <div class="row">
             <div class="col">
-                <form method="POST" action="{% url 'meal_planner' %}">
+                <form method="POST" action="">
                     <h5>Please pick your meals:</h5>
                     {% csrf_token %}
-                    <table class="table align-middle">
-                        <tbody>
-                            <tr id="meal-planner-calendar">
-                                {% for form in formset %}
-                                    <td class="border-0">
-                                        {{ form }}
-                                    </td>
-                                {% endfor %}
-                            </tr>   
-                        </tbody>  
-                    </table>
-                    <button type="submit" class="button">Update plan</button>
+                    {{ formset.management_form }}
+                    {% for form in formset %}
+                    <p><strong>Meal {{ forloop.counter }}:</strong></p>
+                        {{ form }}
+                        <hr>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-success">Update plan</button>
+                    <a href="{% url 'meal_planner' %}" class="btn btn-danger">Cancel</a>
                 </form>
-                
-                <!-- <form method="POST" action="{% url 'meal_planner' %}">
-                    <h5>Please pick your meals:</h5>
-                    {% csrf_token %}
-                    {{ meal_plan_form.as_p }}
-                    <button type="submit" class="button">Update plan</button>
-                </form> -->
             </div>
         </div>
     </div>

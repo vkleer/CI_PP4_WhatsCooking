@@ -35,8 +35,10 @@
                                 {% for day in week %}
                                     <td class="border-0">
                                         {% for plan in mealplan_list %}
+                                        {% if plan.meal_planner.user|slugify == user.username|slugify %}
                                             {% if plan.date|date:"d/m/Y" == day|date:"d/m/Y" %}
                                                 <p>Meal plan</p>
+                                                <p>{{ plan.meal_planner }}</p>
                                                 <ul>
                                                     {% for meal in plan.meal_options.all %}
                                                         <li>
@@ -46,7 +48,9 @@
                                                 </ul>
                                                 <input type="hidden" name="meal_plan_id" value="{{ plan.id }}">
                                             {% endif %}
+                                            {% endif %}
                                         {% endfor %}
+                                        
                                             {% csrf_token %}
                                             <a href="" class="btn btn-dark"></a>
                                     </td>

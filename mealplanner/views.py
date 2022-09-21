@@ -97,3 +97,14 @@ class EditMealPlan(generic.View):
             formset.save()
             messages.success(request, 'Meal plan updated succesfully.')
             return redirect(reverse('meal_planner'))
+
+
+class DeleteMealPlan(generic.View):
+    def post(self, request, meal_plan_id):
+        meal_plan = MealPlan.objects.get(id=meal_plan_id)
+        meal_plan.delete()
+        messages.info(
+            request,
+            'Meal plan deleted succesfully.'
+        )
+        return redirect(reverse('meal_planner'))

@@ -50,8 +50,9 @@ class MealPlannerView(generic.View):
 class CreateMealPlan(generic.View):
     def get(self, request, meal_plan_date):
         MealOptionFormSet = inlineformset_factory(MealPlan, MealOptionToMealPlan, fields=('meal_option',), extra=10, max_num=10)
+        user = request.user
         form = MealPlanForm(initial={
-            'meal_planner': request.user.username,
+            'meal_planner': user.id,
             'date': meal_plan_date,
         })
         formset = MealOptionFormSet()

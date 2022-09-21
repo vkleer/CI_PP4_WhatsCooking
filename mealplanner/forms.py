@@ -1,8 +1,10 @@
 from django import forms
 from .models import Calendar, MealPlan
 
+
 class DateInput(forms.DateInput):
     input_type = 'date'
+
 
 class CalendarForm(forms.ModelForm):
     class Meta:
@@ -12,7 +14,8 @@ class CalendarForm(forms.ModelForm):
             'picked_date': DateInput()
         }
 
+
 class MealPlanForm(forms.ModelForm):
     class Meta:
         model = MealPlan
-        fields = ['meal_options']
+        fields = ['meal_planner', 'date']

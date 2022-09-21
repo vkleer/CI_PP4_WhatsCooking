@@ -47,6 +47,36 @@ class MealPlannerView(generic.View):
             messages.error(request, 'Something went wrong.')
 
 
+class CreateMealPlan(generic.View):
+    def get(self, request, meal_plan_date):
+        MealOptionFormSet = inlineformset_factory(MealPlan, MealOptionToMealPlan, fields=('meal_option',), extra=10, max_num=10)
+        form = MealPlanForm(initial={
+            'meal_planner': request.user.username,
+            'date': meal_plan_date,
+        })
+        formset = MealOptionFormSet()
+        context = {
+            'form': form,
+            'formset': formset,
+        }
+        return render(request, 'create_meal_plan.html', context)
+
+
+    def post(self, request, meal_plan_date):
+        MealOptionFormSet = inlineformset_factory(MealPlan, MealOptionToMealPlan, fields=('meal_option',), extra=10, max_num=10)
+        form = MealPlanForm(request.POST)
+        if form.is_valid():
+            meal_planner = form.cleaned_data.get('meal_planner')
+            date = form.cleaned_data.get('date')
+            meal_plan = MealPlan(meal_planner=meal_planner, date=date)
+            meal_plan.save()
+            formset = MealOptionFormSet(request.POST, instance=meal_plan)
+        if formset.is_valid():
+            formset.save()
+            messages.success(request, 'Meal plan created succesfully.')
+            return redirect(reverse('meal_planner'))
+
+
 class EditMealPlan(generic.View):
     def get(self, request, meal_plan_id):
         MealOptionFormSet = inlineformset_factory(MealPlan, MealOptionToMealPlan, fields=('meal_option',), extra=9, max_num=10)
@@ -64,4 +94,5 @@ class EditMealPlan(generic.View):
         formset = MealOptionFormSet(request.POST, instance=meal_plan)
         if formset.is_valid():
             formset.save()
+            messages.success(request, 'Meal plan updated succesfully.')
             return redirect(reverse('meal_planner'))

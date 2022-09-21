@@ -1,0 +1,31 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+    <div class="jumbotron jumbotron-fluid hero-container">
+        <div class="container-fluid p-5">
+            <h1 class="text-white display-2">Create meal plan {{ meal_plan.date|date:"d/m/Y" }}</h1>
+            <p class="lead text-white">
+                Welcome, {{ user.first_name }}!
+            </p>
+        </div>
+    </div>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col">
+                <form method="POST" action="">
+                    <h5>Please pick your meals:</h5>
+                    {% csrf_token %}
+                    {{ formset.management_form }}
+                    {{ form.as_p }}
+                    {% for form in formset %}
+                    <p><strong>Meal {{ forloop.counter }}:</strong></p>
+                        {{ form }}
+                        <hr>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-success">Create plan</button>
+                    <a href="{% url 'meal_planner' %}" class="btn btn-danger">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

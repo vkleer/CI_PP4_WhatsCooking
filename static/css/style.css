@@ -115,5 +115,9 @@ input[name="login"]:focus, input[name="password"]:focus {
     width: 420px;
 }
 
+label[for="id_meal_options"], label[for="id_picked_date"],
+label[for="id_meal_planner"], label[for="id_date"]  {
+    display: none;
+}
 
 /* meal_detail template */

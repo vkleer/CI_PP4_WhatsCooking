@@ -9,57 +9,59 @@
             </p>
         </div>
     </div>
-    <div class="container py-5">
-        <div class="row">
-            <div class="col">
-
-                <form method="POST" action="{% url 'meal_planner' %}">
-                    <h5>Please pick a day:</h5>
-                    {% csrf_token %}
-                    {{ calendar_form }}
-                    <button type="submit" class="button">Pick day</button>
-                </form>
-
-                <div class="table-responsive">
-                    <table class="table align-middle">
-                        <thead>
-                            <tr>
-                                {% for day in week %}
-                                    <th>{{ day|date:"d/m/Y" }}</th>
+    <div class="container-fluid gx-0 py-5">
+        <div class="d-flex justify-content-center pb-5">
+            <form method="POST" action="{% url 'meal_planner' %}">
+                <h5>Pick a date for day 1:</h5>
+                {% csrf_token %}
+                {{ calendar_form }}
+                <button type="submit" id="cal-btn" class="btn btn-dark w-100 mt-2">Pick day</button>
+            </form>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered align-middle">
+                <thead>
+                    <tr>
+                        {% for day in week %}
+                            <th>
+                            <div class="text-center">
+                                <p>Day {{forloop.counter}}:</p>
+                                {{ day|date:"d/m/Y" }}
+                            </div>
+                            </th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+            
+                <tbody>
+                    <tr id="meal-planner-calendar">
+                        {% for day in week %}
+                            <td>
+                                {% for plan in mealplan_list %}
+                                    {% if plan.meal_planner.user|slugify == user.username|slugify %}
+                                        {% if plan.date|date:"d/m/Y" == day|date:"d/m/Y" %}
+                                            <strong><p>Meal plan</p></strong>
+                                            <ul>
+                                                {% for meal in plan.meal_options.all %}
+                                                    <li>
+                                                        {{ meal }}
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                            <hr>
+                                            <strong><p>Actions</p></strong>
+                                            <input type="hidden" name="meal_plan_id" value="{{ plan.id }}">
+                                        {% endif %}
+                                    {% endif %}
                                 {% endfor %}
-                            </tr>
-                        </thead>
-                    
-                        <tbody>
-                            <tr id="meal-planner-calendar">
-                                {% for day in week %}
-                                    <td class="border-0">
-                                        {% for plan in mealplan_list %}
-                                            {% if plan.meal_planner.user|slugify == user.username|slugify %}
-                                                {% if plan.date|date:"d/m/Y" == day|date:"d/m/Y" %}
-                                                    <p>Meal plan</p>
-                                                    <p>{{ plan.meal_planner }}</p>
-                                                    <ul>
-                                                        {% for meal in plan.meal_options.all %}
-                                                            <li>
-                                                                {{ meal }}
-                                                            </li>
-                                                        {% endfor %}
-                                                    </ul>
-                                                    <input type="hidden" name="meal_plan_id" value="{{ plan.id }}">
-                                                {% endif %}
-                                            {% endif %}
-                                        {% endfor %}
-                                        {% csrf_token %}
-                                        <input type="hidden" name="meal_plan_date" value="{{ day|date:'Y-m-d' }}">
-                                        <a href="" class="btn btn-dark"></a>
-                                    </td>
-                                {% endfor %}
-                            </tr>   
-                        </tbody>  
-                    </table>
-                </div>
-            </div>
+                                {% csrf_token %}
+                                <input type="hidden" name="meal_plan_date" value="{{ day|date:'Y-m-d' }}">
+                                <a href="" class="btn btn-primary"></a>
+                            </td>
+                        {% endfor %}
+                    </tr>   
+                </tbody>  
+            </table>
         </div>
     </div>
     <div class="modal fade" id="deletionModal" tabindex="-1" role="dialog" aria-labelledby="deletionModelLabel" aria-hidden="true">
@@ -73,14 +75,15 @@
                         </p>
                     </div>
                     <div class="modal-footer justify-content-center">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         <button type="submit" class="btn btn-danger">Yes, delete meal plan</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
     <script>
-        getCalendarCells()
+        getCalendarCells();
+        setCalDefDate();
     </script>
 {% endblock content %}

@@ -120,4 +120,23 @@ label[for="id_meal_planner"], label[for="id_date"]  {
     display: none;
 }
 
+.btn-add {
+    display: block!important;
+    height: 40px;
+    width: 40px;
+    margin: 0 auto;
+}
+.btn-del {
+    margin-left: 1rem;
+}
+
+.table > :not(:first-child) {
+    border-top: 0!important;
+}
+
+#bot { 
+    position: absolute;
+    bottom: 0; 
+}
+
 /* meal_detail template */

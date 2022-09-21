@@ -26,7 +26,7 @@ class MealPlannerView(generic.View):
         context = {
             'mealplan_list': MealPlan.objects.all(),
             'today': today,
-            'calendar_form': CalendarForm(initial={'picked_date': calendar.picked_date}),
+            'calendar_form': CalendarForm(initial={'picked_date': datetime.today().strftime('%Y-%m-%d')}),
             'user_calendar': calendar,
             'week': week,
         }

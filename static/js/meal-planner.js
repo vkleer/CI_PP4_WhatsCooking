@@ -43,9 +43,6 @@ function getCalendarCells() {
 }
 
 function hideFormSelect() {
-    mealPlannerSel = document.getElementById('id_meal_planner')
     dateSel = document.getElementById('id_date')
-
-    mealPlannerSel.setAttribute('hidden', '')
     dateSel.setAttribute('hidden', '')
 }

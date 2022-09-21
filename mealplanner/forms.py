@@ -18,9 +18,8 @@ class CalendarForm(forms.ModelForm):
 class MealPlanForm(forms.ModelForm):
     class Meta:
         model = MealPlan
-        fields = ['meal_planner', 'date']
+        fields = ['date']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['meal_planner'].widget.attrs['readonly'] = True
         self.fields['date'].widget.attrs['readonly'] = True

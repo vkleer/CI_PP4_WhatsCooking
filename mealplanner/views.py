@@ -6,7 +6,7 @@ from django.db import IntegrityError
 from django.contrib import messages
 # from django.forms import formset_factory
 from django.forms import inlineformset_factory
-from .models import MealPlan, MealOptionToMealPlan, Calendar
+from .models import MealPlan, MealPlanner ,MealOptionToMealPlan, Calendar
 from .forms import CalendarForm, MealPlanForm
 
 
@@ -50,9 +50,7 @@ class MealPlannerView(generic.View):
 class CreateMealPlan(generic.View):
     def get(self, request, meal_plan_date):
         MealOptionFormSet = inlineformset_factory(MealPlan, MealOptionToMealPlan, fields=('meal_option',), extra=10, max_num=10)
-        user = request.user
         form = MealPlanForm(initial={
-            'meal_planner': user.id,
             'date': meal_plan_date,
         })
         formset = MealOptionFormSet()
@@ -67,7 +65,7 @@ class CreateMealPlan(generic.View):
         MealOptionFormSet = inlineformset_factory(MealPlan, MealOptionToMealPlan, fields=('meal_option',), extra=10, max_num=10)
         form = MealPlanForm(request.POST)
         if form.is_valid():
-            meal_planner = form.cleaned_data.get('meal_planner')
+            meal_planner = MealPlanner.objects.get(user=request.user)
             date = form.cleaned_data.get('date')
             meal_plan = MealPlan(meal_planner=meal_planner, date=date)
             meal_plan.save()

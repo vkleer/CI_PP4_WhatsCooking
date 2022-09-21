@@ -19,3 +19,8 @@ class MealPlanForm(forms.ModelForm):
     class Meta:
         model = MealPlan
         fields = ['meal_planner', 'date']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['meal_planner'].disabled = True
+        self.fields['date'].disabled = True

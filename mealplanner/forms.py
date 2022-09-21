@@ -22,5 +22,5 @@ class MealPlanForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['meal_planner'].disabled = True
-        self.fields['date'].disabled = True
+        self.fields['meal_planner'].widget.attrs['readonly'] = True
+        self.fields['date'].widget.attrs['readonly'] = True

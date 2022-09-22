@@ -1,14 +1,12 @@
 {% extends "base.html" %}
 
+{% block header_title %}
+    Recipe list
+{% endblock header_title %}
+{% block header_text %}
+    Find your new favorite recipe here, {{ user.first_name }}!
+{% endblock header_text %}
 {% block content %}
-    <div class="jumbotron jumbotron-fluid hero-container">
-        <div class="container-fluid p-5">
-            <h1 class="text-white display-2">Recipe list</h1>
-            <p class="lead text-white">
-                Find your new favorite recipe here, {{ user.first_name }}!
-            </p>
-        </div>
-    </div>
     <div class="container py-5">
         <div class="row mb-5">
             <div class="col-md-2">

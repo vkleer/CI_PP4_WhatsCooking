@@ -2,17 +2,13 @@
 
 {% load i18n %}
 
-{% block head_title %}{% trans "Log out" %}{% endblock %}
-
+{% block header_title %}
+  Log out
+{% endblock header_title %}
+{% block header_text %}
+  Are you sure you want to log out, {{ user.first_name }}?
+{% endblock header_text %}
 {% block content %}
-  <div class="jumbotron jumbotron-fluid hero-container">
-    <div class="container-fluid p-5">
-        <h1 class="text-white display-2">{% trans "Log out" %}</h1>
-        <p class="lead text-white">
-          Are you sure you want to log out, {{ user.first_name }}?
-        </p>
-    </div>
-  </div>
   <div class="container py-5">
     <div class="row pb-5">
         <div class="col-md-8 offset-md-2">

@@ -3,15 +3,13 @@
 {% load i18n %}
 {% load account socialaccount %}
 
+{% block header_title %}
+    {{ user.username }}'s profile
+{% endblock header_title %}
+{% block header_text %}
+    You can find your account details here.
+{% endblock header_text %}
 {% block content %}
-    <div class="jumbotron jumbotron-fluid hero-container">
-        <div class="container-fluid p-5">
-            <h1 class="text-white display-2">{{ user.username }}'s profile</h1>
-            <p class="lead text-white">
-            You can find your account details here.
-            </p>
-        </div>
-    </div>
     <div class="container py-5">
         <div class="row pb-5">
             <div class="col-md-8 offset-md-2">
@@ -55,8 +53,8 @@
                         </p>
                     </div>
                     <div class="modal-footer justify-content-center">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         <button type="submit" class="btn btn-danger">Yes, delete my account</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                     </div>
                 </div>
             </form>

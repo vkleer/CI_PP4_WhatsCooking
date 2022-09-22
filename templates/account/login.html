@@ -3,17 +3,13 @@
 {% load i18n %}
 {% load account socialaccount %}
 
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
-
+{% block header_title %}
+    Log in
+{% endblock header_title %}
+{% block header_text %}
+    Please log in to your account.
+{% endblock header_text %}
 {% block content %}
-  <div class="jumbotron jumbotron-fluid hero-container">
-    <div class="container-fluid p-5">
-        <h1 class="text-white display-2">{% trans "Log in" %}</h1>
-        <p class="lead text-white">
-          Please log in to your account.
-        </p>
-    </div>
-  </div>
   <div class="container py-5">
     <div class="row pb-5">
         <div class="col-md-8 offset-md-2">

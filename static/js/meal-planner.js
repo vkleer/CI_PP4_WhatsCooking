@@ -11,12 +11,12 @@ function setCalDefDate() {
 }
 
 function getCalendarCells() {
-    calendar = document.getElementById('meal-planner-calendar')
-    cells = calendar.children
+    calendar = document.getElementById('meal-planner-calendar');
+    cells = calendar.children;
 
     for (i = 0; i < cells.length; i++) {
         mealPlanButton = cells[i].querySelector('.btn');
-        mealPlanId = cells[i].querySelector('input[name=meal_plan_id]')
+        mealPlanId = cells[i].querySelector('input[name=meal_plan_id]');
         if (cells[i].children.length > 3 ) {
             let deleteButton = document.createElement('button');
             deleteButton.classList.add('btn', 'btn-danger', 'btn-del');
@@ -42,6 +42,13 @@ function getCalendarCells() {
 }
 
 function hideFormSelect() {
-    dateSel = document.getElementById('id_date')
-    dateSel.setAttribute('hidden', '')
+    dateSel = document.getElementById('id_date');
+    dateSel.setAttribute('hidden', '');
+}
+
+function delFormDelBtns() {
+    delBtns = document.getElementsByClassName('mb-3');
+    for (i = 0; i < delBtns.length; i++) {
+        delBtns[i].remove();
+    }
 }

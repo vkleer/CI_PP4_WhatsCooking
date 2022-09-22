@@ -1,5 +1,7 @@
 {% extends 'base.html' %} 
 
+{% load crispy_forms_tags %}
+
 {% block header_title %}
     {{ user.first_name }}'s meal planner
 {% endblock header_title %}
@@ -12,7 +14,7 @@
             <form method="POST" action="{% url 'meal_planner' %}">
                 <h5>Pick a date for day 1:</h5>
                 {% csrf_token %}
-                {{ calendar_form }}
+                {{ calendar_form | crispy }}
                 <button type="submit" id="cal-btn" class="btn btn-dark w-100 mt-2">Pick day</button>
             </form>
         </div>

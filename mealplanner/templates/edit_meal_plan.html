@@ -1,5 +1,7 @@
 {% extends 'base.html' %} 
 
+{% load crispy_forms_tags %}
+
 {% block header_title %}
     Edit meal plan {{ meal_plan.date|date:"d/m/Y" }}
 {% endblock header_title %}
@@ -16,7 +18,7 @@
                     {{ formset.management_form }}
                     {% for form in formset %}
                     <p><strong>Meal {{ forloop.counter }}:</strong></p>
-                        {{ form }}
+                        {{ form | crispy }}
                         <hr>
                     {% endfor %}
                     <button type="submit" class="btn btn-success">Update plan</button>

@@ -139,4 +139,10 @@ label[for="id_meal_planner"], label[for="id_date"]  {
     bottom: 0; 
 }
 
+/* meals template */
+
+#meal-search {
+    margin-top: 40px;
+}
+
 /* meal_detail template */

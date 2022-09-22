@@ -51,3 +51,26 @@ function searchMeals() {
         }
     }
 }
+
+function toggleMealTypes() {
+    // Variables for every meal type list div
+    const breakfastList = document.getElementById('breakfast-list');
+    const lunchList = document.getElementById('lunch-list');
+    const dinnerList = document.getElementById('dinner-list');
+    const snackList = document.getElementById('snack-list');
+    const mealTypeLists = [breakfastList, lunchList, dinnerList, snackList];
+    // Variables for every meal type checkbox
+    const breakfastToggle = document.getElementById('breakfast-toggle');
+    const lunchToggle = document.getElementById('lunch-toggle');
+    const dinnerToggle = document.getElementById('dinner-toggle');
+    const snackToggle = document.getElementById('snack-toggle');
+    const mealTypeToggles = [breakfastToggle, lunchToggle, dinnerToggle, snackToggle];
+
+    for (i = 0; i < mealTypeToggles.length; i++) {
+        if (mealTypeToggles[i].checked) {
+            mealTypeLists[i].style.display = '';
+        } else {
+            mealTypeLists[i].style.display = 'none';
+        }
+    }
+}

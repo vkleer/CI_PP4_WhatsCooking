@@ -7,20 +7,20 @@
                 <fieldset>
                     <p class="fw-bold">Meal type:</p>
                     <div>
-                      <input type="checkbox" id="breakfast" name="breakfast" checked>
-                      <label for="scales">Breakfast</label>
+                      <input type="checkbox" id="breakfast-toggle" name="breakfast-toggle" onclick="toggleMealTypes()" checked>
+                      <label for="breakfast-toggle">Breakfast</label>
                     </div>
                     <div>
-                      <input type="checkbox" id="lunch" name="lunch" checked>
-                      <label for="horns">Lunch</label>
+                      <input type="checkbox" id="lunch-toggle" name="lunch-toggle" onclick="toggleMealTypes()" checked>
+                      <label for="lunch-toggle">Lunch</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="dinner" name="dinner" checked>
-                        <label for="scales">Dinner</label>
+                        <input type="checkbox" id="dinner-toggle" name="dinner-toggle" onclick="toggleMealTypes()" checked>
+                        <label for="dinner-toggle">Dinner</label>
                       </div>
                       <div>
-                        <input type="checkbox" id="snack" name="snack" checked>
-                        <label for="horns">Snack</label>
+                        <input type="checkbox" id="snack-toggle" name="snack-toggle" onclick="toggleMealTypes()" checked>
+                        <label for="snack-toggle">Snack</label>
                       </div>
                 </fieldset>
             </div>
@@ -38,113 +38,125 @@
             </div>
         </div>
         <div id="meals-list">
-            <h3>Breakfast</h3>
-            <div class="row row-cols-sm-2 row-cols-md-3 g-3">
-                {% for meal in meal_list %}
-                    {% if meal.type|stringformat:"s" == 'Breakfast' %}
-                        <div class="col-md-3 meal-card diet-filter-any">
-                            <div class="card mb-4 h-100">
-                                <a href="{% url 'meal_detail' meal.id %}" class="btn btn-outline-dark h-100">
-                                    <img class="card-img-top" src="{{ meal.image.url }}">
-                                    <div class="card-body">
-                                        <h1 class="card-title">{{ meal.name }}</h1>
-                                        <p class="card-text">
-                                            <strong>Meal type:</strong> <span class="meal-type">{{ meal.type }}</span> <br>
-                                            {% if meal.diet != None %}
-                                                <strong>Diet type:</strong> <span class="diet-type">{{ meal.diet }}</span> <br>
-                                            {% else %}
-                                                <span class="diet-type"></span>
-                                            {% endif %}
-                                            <strong>Prep time:</strong>  {{ meal.prep_time }} <br>
-                                            <strong>Cooking time:</strong> {{ meal.cook_time }}
-                                        </p>
-                                    </div>
-                                </a>
+            <div id="breakfast-list">
+                <hr>
+                <h3>Breakfast</h3>
+                <div class="row row-cols-sm-2 row-cols-md-3 g-3">
+                    {% for meal in meal_list %}
+                        {% if meal.type|stringformat:"s" == 'Breakfast' %}
+                            <div class="col-md-3 meal-card diet-filter-any">
+                                <div class="card mb-4 h-100">
+                                    <a href="{% url 'meal_detail' meal.id %}" class="btn btn-outline-dark h-100">
+                                        <img class="card-img-top" src="{{ meal.image.url }}">
+                                        <div class="card-body">
+                                            <h1 class="card-title">{{ meal.name }}</h1>
+                                            <p class="card-text">
+                                                <strong>Meal type:</strong> <span class="meal-type">{{ meal.type }}</span> <br>
+                                                {% if meal.diet != None %}
+                                                    <strong>Diet type:</strong> <span class="diet-type">{{ meal.diet }}</span> <br>
+                                                {% else %}
+                                                    <span class="diet-type"></span>
+                                                {% endif %}
+                                                <strong>Prep time:</strong>  {{ meal.prep_time }} <br>
+                                                <strong>Cooking time:</strong> {{ meal.cook_time }}
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
             </div>
-            <h3>Lunch</h3>
-            <div class="row row-cols-sm-2 row-cols-md-3 g-3">
-                {% for meal in meal_list %}
-                    {% if meal.type|stringformat:"s" == 'Lunch' %}
-                        <div class="col-md-3 meal-card diet-filter-any">
-                            <div class="card mb-4 h-100">
-                                <a href="{% url 'meal_detail' meal.id %}" class="btn btn-outline-dark h-100">
-                                    <img class="card-img-top" src="{{ meal.image.url }}">
-                                    <div class="card-body">
-                                        <h1 class="card-title">{{ meal.name }}</h1>
-                                        <p class="card-text">
-                                            <strong>Meal type:</strong> <span class="meal-type">{{ meal.type }}</span> <br>
-                                            {% if meal.diet != None %}
-                                                <strong>Diet type:</strong> <span class="diet-type">{{ meal.diet }}</span> <br>
-                                            {% else %}
-                                                <span class="diet-type"></span>
-                                            {% endif %}
-                                            <strong>Prep time:</strong>  {{ meal.prep_time }} <br>
-                                            <strong>Cooking time:</strong> {{ meal.cook_time }}
-                                        </p>
-                                    </div>
-                                </a>
+            <div id="lunch-list">
+                <hr>
+                <h3>Lunch</h3>
+                <div class="row row-cols-sm-2 row-cols-md-3 g-3">
+                    {% for meal in meal_list %}
+                        {% if meal.type|stringformat:"s" == 'Lunch' %}
+                            <div class="col-md-3 meal-card diet-filter-any">
+                                <div class="card mb-4 h-100">
+                                    <a href="{% url 'meal_detail' meal.id %}" class="btn btn-outline-dark h-100">
+                                        <img class="card-img-top" src="{{ meal.image.url }}">
+                                        <div class="card-body">
+                                            <h1 class="card-title">{{ meal.name }}</h1>
+                                            <p class="card-text">
+                                                <strong>Meal type:</strong> <span class="meal-type">{{ meal.type }}</span> <br>
+                                                {% if meal.diet != None %}
+                                                    <strong>Diet type:</strong> <span class="diet-type">{{ meal.diet }}</span> <br>
+                                                {% else %}
+                                                    <span class="diet-type"></span>
+                                                {% endif %}
+                                                <strong>Prep time:</strong>  {{ meal.prep_time }} <br>
+                                                <strong>Cooking time:</strong> {{ meal.cook_time }}
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
             </div>
-            <h3>Dinner</h3>
-            <div class="row row-cols-sm-2 row-cols-md-3 g-3">
-                {% for meal in meal_list %}
-                    {% if meal.type|stringformat:"s" == 'Dinner' %}
-                        <div class="col-md-3 meal-card diet-filter-any">
-                            <div class="card mb-4 h-100">
-                                <a href="{% url 'meal_detail' meal.id %}" class="btn btn-outline-dark h-100">
-                                    <img class="card-img-top" src="{{ meal.image.url }}">
-                                    <div class="card-body">
-                                        <h1 class="card-title">{{ meal.name }}</h1>
-                                        <p class="card-text">
-                                            <strong>Meal type:</strong> <span class="meal-type">{{ meal.type }}</span> <br>
-                                            {% if meal.diet != None %}
-                                                <strong>Diet type:</strong> <span class="diet-type">{{ meal.diet }}</span> <br>
-                                            {% else %}
-                                                <span class="diet-type"></span>
-                                            {% endif %}
-                                            <strong>Prep time:</strong>  {{ meal.prep_time }} <br>
-                                            <strong>Cooking time:</strong> {{ meal.cook_time }}
-                                        </p>
-                                    </div>
-                                </a>
+            <div id="dinner-list">
+                <hr>
+                <h3>Dinner</h3>
+                <div class="row row-cols-sm-2 row-cols-md-3 g-3">
+                    {% for meal in meal_list %}
+                        {% if meal.type|stringformat:"s" == 'Dinner' %}
+                            <div class="col-md-3 meal-card diet-filter-any">
+                                <div class="card mb-4 h-100">
+                                    <a href="{% url 'meal_detail' meal.id %}" class="btn btn-outline-dark h-100">
+                                        <img class="card-img-top" src="{{ meal.image.url }}">
+                                        <div class="card-body">
+                                            <h1 class="card-title">{{ meal.name }}</h1>
+                                            <p class="card-text">
+                                                <strong>Meal type:</strong> <span class="meal-type">{{ meal.type }}</span> <br>
+                                                {% if meal.diet != None %}
+                                                    <strong>Diet type:</strong> <span class="diet-type">{{ meal.diet }}</span> <br>
+                                                {% else %}
+                                                    <span class="diet-type"></span>
+                                                {% endif %}
+                                                <strong>Prep time:</strong>  {{ meal.prep_time }} <br>
+                                                <strong>Cooking time:</strong> {{ meal.cook_time }}
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
             </div>
-            <h3>Snack</h3>
-            <div class="row row-cols-sm-2 row-cols-md-3 g-3">
-                {% for meal in meal_list %}
-                    {% if meal.type|stringformat:"s" == 'Snack' %}
-                        <div class="col-md-3 meal-card diet-filter-any">
-                            <div class="card mb-4 h-100">
-                                <a href="{% url 'meal_detail' meal.id %}" class="btn btn-outline-dark h-100">
-                                    <img class="card-img-top" src="{{ meal.image.url }}">
-                                    <div class="card-body">
-                                        <h1 class="card-title">{{ meal.name }}</h1>
-                                        <p class="card-text">
-                                            <strong>Meal type:</strong> <span class="meal-type">{{ meal.type }}</span> <br>
-                                            {% if meal.diet != None %}
-                                                <strong>Diet type:</strong> <span class="diet-type">{{ meal.diet }}</span> <br>
-                                            {% else %}
-                                                <span class="diet-type"></span>
-                                            {% endif %}
-                                            <strong>Prep time:</strong>  {{ meal.prep_time }} <br>
-                                            <strong>Cooking time:</strong> {{ meal.cook_time }}
-                                        </p>
-                                    </div>
-                                </a>
+            <div id="snack-list">
+                <hr>
+                <h3>Snack</h3>
+                <div class="row row-cols-sm-2 row-cols-md-3 g-3">
+                    {% for meal in meal_list %}
+                        {% if meal.type|stringformat:"s" == 'Snack' %}
+                            <div class="col-md-3 meal-card diet-filter-any">
+                                <div class="card mb-4 h-100">
+                                    <a href="{% url 'meal_detail' meal.id %}" class="btn btn-outline-dark h-100">
+                                        <img class="card-img-top" src="{{ meal.image.url }}">
+                                        <div class="card-body">
+                                            <h1 class="card-title">{{ meal.name }}</h1>
+                                            <p class="card-text">
+                                                <strong>Meal type:</strong> <span class="meal-type">{{ meal.type }}</span> <br>
+                                                {% if meal.diet != None %}
+                                                    <strong>Diet type:</strong> <span class="diet-type">{{ meal.diet }}</span> <br>
+                                                {% else %}
+                                                    <span class="diet-type"></span>
+                                                {% endif %}
+                                                <strong>Prep time:</strong>  {{ meal.prep_time }} <br>
+                                                <strong>Cooking time:</strong> {{ meal.cook_time }}
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>

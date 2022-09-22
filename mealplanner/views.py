@@ -6,7 +6,7 @@ from django.db import IntegrityError
 from django.contrib import messages
 # from django.forms import formset_factory
 from django.forms import inlineformset_factory
-from .models import MealPlan, MealPlanner ,MealOptionToMealPlan, Calendar
+from .models import MealPlan, MealPlanner ,MealToMealPlan, Calendar
 from .forms import CalendarForm, MealPlanForm
 
 
@@ -49,7 +49,7 @@ class MealPlannerView(generic.View):
 
 class CreateMealPlan(generic.View):
     def get(self, request, meal_plan_date):
-        MealOptionFormSet = inlineformset_factory(MealPlan, MealOptionToMealPlan, fields=('meal_option',), extra=10, max_num=10)
+        MealOptionFormSet = inlineformset_factory(MealPlan, MealToMealPlan, fields=('meal',), extra=10, max_num=10)
         form = MealPlanForm(initial={
             'date': meal_plan_date,
         })
@@ -62,7 +62,7 @@ class CreateMealPlan(generic.View):
 
 
     def post(self, request, meal_plan_date):
-        MealOptionFormSet = inlineformset_factory(MealPlan, MealOptionToMealPlan, fields=('meal_option',), extra=10, max_num=10)
+        MealOptionFormSet = inlineformset_factory(MealPlan, MealToMealPlan, fields=('meal',), extra=10, max_num=10)
         form = MealPlanForm(request.POST)
         if form.is_valid():
             meal_planner = MealPlanner.objects.get(user=request.user)
@@ -78,7 +78,7 @@ class CreateMealPlan(generic.View):
 
 class EditMealPlan(generic.View):
     def get(self, request, meal_plan_id):
-        MealOptionFormSet = inlineformset_factory(MealPlan, MealOptionToMealPlan, fields=('meal_option',), extra=9, max_num=10)
+        MealOptionFormSet = inlineformset_factory(MealPlan, MealToMealPlan, fields=('meal',), extra=9, max_num=10)
         meal_plan = MealPlan.objects.get(id=meal_plan_id)
         formset = MealOptionFormSet(instance=meal_plan)
         context = {
@@ -88,7 +88,7 @@ class EditMealPlan(generic.View):
         return render(request, 'edit_meal_plan.html', context)
 
     def post(self, request, meal_plan_id):
-        MealOptionFormSet = inlineformset_factory(MealPlan, MealOptionToMealPlan, fields=('meal_option',), extra=9, max_num=10)
+        MealOptionFormSet = inlineformset_factory(MealPlan, MealToMealPlan, fields=('meal',), extra=9, max_num=10)
         meal_plan = MealPlan.objects.get(id=meal_plan_id)
         formset = MealOptionFormSet(request.POST, instance=meal_plan)
         if formset.is_valid():

@@ -20,20 +20,12 @@ class MealPlanner(models.Model):
         return self.user.username
 
 
-class MealOption(models.Model):
-    meal = models.ForeignKey(
-        Meal, on_delete=models.CASCADE,
-        related_name='meal',
-        blank=True, null=True
-    )
+class MealToMealPlan(models.Model):
+    meal = models.ForeignKey(Meal, on_delete=models.CASCADE, blank=True, null=True)
+    meal_plan = models.ForeignKey('MealPlan', on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.meal.name
-
-
-class MealOptionToMealPlan(models.Model):
-    meal_option = models.ForeignKey('MealOption', on_delete=models.CASCADE, blank=True, null=True)
-    meal_plan = models.ForeignKey('MealPlan', on_delete=models.CASCADE)
+        return '(' + str(self.id) + ') ' + str(self.meal) + ' to meal plan ' + datetime.strptime(format(self.meal_plan.date), '%Y-%M-%d').strftime('%d/%M/%Y')
 
 
 class MealPlan(models.Model):
@@ -45,9 +37,9 @@ class MealPlan(models.Model):
         related_name='meal_planner',
     )
     date = models.DateField()
-    meal_options = models.ManyToManyField(
-        MealOption,
-        through='MealOptionToMealPlan',
+    meal = models.ManyToManyField(
+        Meal,
+        through='MealToMealPlan',
         blank=True
         )
 

@@ -36,17 +36,43 @@
                 <tbody>
                     <tr id="meal-planner-calendar">
                         {% for day in week %}
-                            <td>
+                            <td class="pb-4">
                                 {% for plan in mealplan_list %}
                                     {% if plan.meal_planner.user|slugify == user.username|slugify %}
                                         {% if plan.date|date:"d/m/Y" == day|date:"d/m/Y" %}
-                                            <strong><p>Meal plan</p></strong>
+                                            <h4 class="text-center mt-2">Meal plan</h4>
+                                            <hr>
                                             <ul>
-                                                {% for meal in plan.meal_options.all %}
-                                                    <li>
-                                                        {{ meal }}
-                                                    </li>
+                                                <li><strong>Breakfast</strong></li>
+                                                <ul>
+                                                {% for meal in plan.meal.all %}
+                                                    {% if meal.type|stringformat:"s" == 'Breakfast' %}
+                                                        <li>
+                                                            {{ meal }}
+                                                        </li>
+                                                    {% endif %}
                                                 {% endfor %}
+                                                </ul>  
+                                                <li><strong>Lunch</strong></li>
+                                                <ul>
+                                                {% for meal in plan.meal.all %}
+                                                    {% if meal.type|stringformat:"s" == 'Lunch' %}
+                                                        <li>
+                                                            {{ meal }}
+                                                        </li>
+                                                    {% endif %}
+                                                {% endfor %}
+                                                </ul>
+                                                <li><strong>Dinner</strong></li>
+                                                <ul>
+                                                {% for meal in plan.meal.all %}
+                                                    {% if meal.type|stringformat:"s" == 'Dinner' %}
+                                                        <li>
+                                                            {{ meal }}
+                                                        </li>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </ul>
                                             </ul>
                                             <hr>
                                             <strong><p>Actions</p></strong>

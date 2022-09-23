@@ -1,15 +1,25 @@
-/* base template */
-
-.social-media > li {
-    font-size: 1.6rem;
-    vertical-align: bottom;
-}
-
-.msg-col {
-    margin-bottom: -75px;
-}
-
 /* reusable classes */
+
+.bg-main {
+    background-color: #407464;
+}
+.bg-main-dark {
+    background-color: #2e4b42;
+}
+
+.bg-accent {
+    background-color: #f5e4e4;
+}
+
+.text-h {
+    color: #407464;
+}
+
+.header-hr {
+    height: 5px!important;
+    border-radius: 10px;
+    opacity: .5;
+}
 
 .modal-body {
     text-align: center;
@@ -23,10 +33,45 @@
     margin: 10px 20px;
 }
 
+/* base template */
+
+.social-media > li {
+    font-size: 1.6rem;
+    vertical-align: bottom;
+}
+
+.msg-col {
+    margin-bottom: -75px;
+}
+
+/* navbar */
+
+.navbar-brand {
+    color: #fff;
+    font-size: 1.35rem!important;
+}
+
+.navbar-main .nav-link {
+    color: #fff;
+}
+.navbar-main .nav-link:focus,
+.navbar-main .nav-link:hover {
+    color: #b8d6c8;
+}
+
+.nav-link {
+    font-size: 1.15rem;
+}
+.dropdown-menu-dark .dropdown-item:active {
+    background-color: #9f9f9f!important;
+}
+
 /* index template */
 
-.hero-container {
-    background-color: #f4f4f4;
+.tool-icon {
+    font-size: 12rem;
+    margin: 0 auto;
+    padding-top: 1rem;
 }
 
 .tool-container {

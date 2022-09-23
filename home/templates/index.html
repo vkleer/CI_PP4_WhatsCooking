@@ -3,62 +3,49 @@
 {% block header_title %}
   A meal prepping community
 {% endblock header_title %}
-{% block header_text %}
-    Welcome to What's Cooking! We are passionate about meal prepping, and providing you with the best meal prepping tools.
-{% endblock header_text %}
+{% block header_extra %}
+<div class="row">
+    <div class="col-9">
+        <p class="lead fw-normal">
+            Welcome to What's Cooking! We are passionate about meal prepping, and providing you with the best meal prepping tools. Stay on top of your prep
+            game and make the most of your time by using What's Cooking.
+            <br><br>
+            Explore our tools and feature now!
+        </p>
+        <a href="{% url 'account_signup' %}" class="btn btn-dark">Create account</a>
+    </div>
+    <div class="col-3 text-white text-center">
+        
+    </div>
+</div>
+{% endblock header_extra %}
 {% block content %}
-    <div class="container py-5">
-        <div class="row pb-5">
-            <div class="col text-center">
-                <h2 class="display-3">Our tools</h2>
+    <div class="container-fluid">
+        <div class="row p-5">
+            <div class="col-sm-12 pb-5 col-md-5 pb-md-0 text-center">
+                    <i class="fas fa-calendar-alt tool-icon"></i>
+            </div>
+            <div class="col-sm-12 col-md-7">
+                <h2 class="display-5 fw-bold">Meal planner</h2>
+                <p class="lead fw-normal">
+                    How can you be a real meal prepper without a meal planner? Select the meals you want for each day of the week, 
+                    and you will no longer forget What's Cooking for dinner. The plan you make can be edited at any time and will 
+                    contain links to the recipes that you picked.
+                </p>
             </div>
         </div>
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gx-5">
-            <div class="col">
-                <div class="tool-container bg-dark rounded-tool">
-                    <div class="p-4 text-white tool-content">
-                        <h2>Meal planner</h2>
-                        <p class="lead">
-                            How can you be a real meal prepper without a meal planner? Select the meals you want for each day of the week, 
-                            and you will no longer forget What's Cooking for dinner. The plan you make can be edited at any time and will 
-                            contain links to the recipes that you picked.
-                        </p>
-                    </div>
-                    <div class="tool-content">
-                        <a class="btn btn-outline-light" href="#">Create your meal</a>
-                    </div>
-                </div>
+        <div class="row p-5 bg-accent">
+            <div class="col-sm-12 order-sm-2 col-md-7 order-md-1">
+                <h2 class="display-5 fw-bold">Carefully picked recipes</h2>
+                <p class="lead fw-normal">
+                    It's hard to find simple recipes that you love, so we did the hard work for you. Our recipes are hand-picked 
+                    from the best recipe websites that the internet can serve. Filter by breakfast, lunch, dinner, snacks, or 
+                    even dietary requirements. Your next favorite meal is only a few clicks away!
+                </p>
             </div>
-        <div class="col">
-            <div class="tool-container bg-dark rounded-tool">
-                <div class="p-4 text-white tool-content">
-                    <h2>Grocery list</h2>
-                    <p class="lead">
-                        It's nice to have a meal planner, but how can you prep without a grocery list? Our grocery list tool 
-                        automatically updates when you add a new meal to your meal planner, making sure you won't forget a single 
-                        ingredient!
-                    </p>
-                </div>
-                <div class="tool-content">
-                    <a class="btn btn-outline-light" href="#">View grocery list</a>
-                </div>
+            <div class="col-sm-12 pb-5 order-sm-1 col-md-5 pb-md-0 order-md-2 text-center">
+                <i class="fas fa-list-ol tool-icon"></i>
             </div>
-        </div>
-          <div class="col">
-            <div class="tool-container bg-dark rounded-tool">
-                <div class="p-4 text-white tool-content">
-                    <h2>Carefully picked recipes</h2>
-                    <p class="lead">
-                        It's hard to find simple recipes that you love, so we did the hard work for you. Our recipes are hand-picked 
-                        from the best recipe websites that the internet can serve. Filter by breakfast, lunch, dinner, snacks, or 
-                        even dietary requirements. Your next favorite meal is only a few clicks away!
-                    </p>
-                </div>
-                <div class="tool-content">
-                    <a class="btn btn-outline-light" href="#">Browse all recipes</a>
-                </div>
-            </div>
-        </div>
         </div>
     </div>
 {% endblock content %}

@@ -20,8 +20,8 @@
                   {% csrf_token %}
                   {{ form.as_p }}
                   <input type="hidden" name="{{ redirect_field_name }}" value="../../mealplanner/" />
-                  <button type="submit" class="btn btn-block btn-login">{% trans "Create account" %}</button>
-                  <p class="login-signup">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+                  <button type="submit" class="btn btn-block btn-dark btn-form">{% trans "Create account" %}</button>
+                  <p class="login-signup">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">log in here</a>.{% endblocktrans %}</p>
                 </form>
              </div>
             </div>

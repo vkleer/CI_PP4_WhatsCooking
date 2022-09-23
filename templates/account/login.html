@@ -22,9 +22,9 @@
                   {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                   {% endif %}
-                  <button class="btn btn-block btn-login" type="submit">{% trans "Log in" %}</button>
-                  <p class="login-signup">{% blocktrans %}If you have not created an account yet, then please
-                  <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+                  <button class="btn btn-block btn-dark btn-form" type="submit">{% trans "Log in" %}</button>
+                  <p class="login-signup">{% blocktrans %}If you do not have an account yet, then please
+                  <a href="{{ signup_url }}">create one here</a>.{% endblocktrans %}</p>
                 </div>
               </form>
             </div>

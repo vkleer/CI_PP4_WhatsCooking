@@ -1,7 +1,18 @@
+/* overriding default elements/classes */
+
 body {
     height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+hr {
+    color: #407464;
+    opacity: unset;
+}
+
+.btn-dark:hover {
+    background-color: #1c1f238c;
 }
 
 /* reusable classes */
@@ -12,7 +23,6 @@ body {
 .bg-main-dark {
     background-color: #2e4b42;
 }
-
 .bg-accent {
     background-color: #f5e4e4;
 }
@@ -147,16 +157,9 @@ input[name="login"]:focus, input[name="password"]:focus {
     box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
  }
 
- .btn-login {
+ .btn-form {
     width: 100%;
-    font-weight: bold!important;
-    color: #fff!important;
-    background-color: #ff9c19!important;
-    border-color: rgb(228, 145, 51)!important;
- }
- .btn-login:hover {
-    background-color: #e89b37!important;
-    border-color: rgb(214 147 70)!important;
+
  }
 
  .login-signup {
@@ -199,8 +202,14 @@ label[for="id_meal_planner"], label[for="id_date"]  {
     margin-left: 1rem;
 }
 
+.table {
+    border-color: #f5e4e4;
+}
 .table > :not(:first-child) {
     border-top: 0!important;
+}
+.table hr {
+    color: #f5e4e4;
 }
 
 #bot { 
@@ -212,6 +221,15 @@ label[for="id_meal_planner"], label[for="id_date"]  {
 
 #meal-search {
     margin-top: 40px;
+}
+
+.btn-light {
+    border-color: #f5e4e4;
+    background-color: #f5e4e4;
+}
+.btn-light:hover {
+    background-color: #f5e4e498;
+    border-color: #f5e4e4;
 }
 
 /* meal_detail template */

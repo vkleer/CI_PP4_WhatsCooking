@@ -52,7 +52,7 @@
                         {% if meal.type|stringformat:"s" == 'Breakfast' %}
                             <div class="col-md-3 meal-card diet-filter-any">
                                 <div class="card mb-4 h-100">
-                                    <a href="{% url 'meal_detail' meal.id %}" class="btn btn-outline-dark h-100">
+                                    <a href="{% url 'meal_detail' meal.id %}" class="btn btn-light h-100">
                                         <img class="card-img-top" src="{{ meal.image.url }}">
                                         <div class="card-body">
                                             <h1 class="card-title">{{ meal.name }}</h1>
@@ -82,7 +82,7 @@
                         {% if meal.type|stringformat:"s" == 'Lunch' %}
                             <div class="col-md-3 meal-card diet-filter-any">
                                 <div class="card mb-4 h-100">
-                                    <a href="{% url 'meal_detail' meal.id %}" class="btn btn-outline-dark h-100">
+                                    <a href="{% url 'meal_detail' meal.id %}" class="btn btn-light h-100">
                                         <img class="card-img-top" src="{{ meal.image.url }}">
                                         <div class="card-body">
                                             <h1 class="card-title">{{ meal.name }}</h1>
@@ -112,7 +112,7 @@
                         {% if meal.type|stringformat:"s" == 'Dinner' %}
                             <div class="col-md-3 meal-card diet-filter-any">
                                 <div class="card mb-4 h-100">
-                                    <a href="{% url 'meal_detail' meal.id %}" class="btn btn-outline-dark h-100">
+                                    <a href="{% url 'meal_detail' meal.id %}" class="btn btn-light h-100">
                                         <img class="card-img-top" src="{{ meal.image.url }}">
                                         <div class="card-body">
                                             <h1 class="card-title">{{ meal.name }}</h1>
@@ -142,7 +142,7 @@
                         {% if meal.type|stringformat:"s" == 'Snack' %}
                             <div class="col-md-3 meal-card diet-filter-any">
                                 <div class="card mb-4 h-100">
-                                    <a href="{% url 'meal_detail' meal.id %}" class="btn btn-outline-dark h-100">
+                                    <a href="{% url 'meal_detail' meal.id %}" class="btn btn-light h-100">
                                         <img class="card-img-top" src="{{ meal.image.url }}">
                                         <div class="card-body">
                                             <h1 class="card-title">{{ meal.name }}</h1>

@@ -1,0 +1,67 @@
+{% extends 'base.html' %} 
+
+{% block header_title %}
+  Contact us
+{% endblock header_title %}
+{% block header_extra %}
+<div class="row">
+    <div class="col-9">
+        {% if user.is_authenticated %}
+        <p class="lead fw-normal">
+            Hi {{ user.first_name }}, please fill out the form below to contact us.
+        </p>
+        {% else %}
+        <p class="lead fw-normal">
+            Hi there, please fill out the form below to contact us.
+        </p>
+        {% endif %}
+    </div>
+</div>
+{% endblock header_extra %}
+{% block content %}
+<div class="container py-5">
+    <div class="row pb-5">
+      <div class="col-md-8 offset-md-2">
+        <div class="card login-card bg-light">
+          <div class="card-body">
+            <form method="POST" action="{% url 'contact' %}">
+                {% csrf_token %}
+                <div class="login-container"">
+                    {% if request.user.is_authenticated %}
+                        <div class="col-md-6 pb-3">
+                            <label for="name" class="sr-only">Name:</label>
+                            <input type="text" id="name" name="contact-name" class="form-control" placeholder= "{{ user.username }}" disabled/>
+                        </div>
+                        <div class="col-md-12 pb-3">
+                            <label for="email" class="sr-only">E-mail:</label>
+                        {% if request.user.email %}
+                            <input type="email" id="email" name="contact-email" class="form-control" placeholder= "{{ user.email }}" disabled />
+                        {% else %}
+                            <input type="email" id="email" name="contact-email" class="form-control" placeholder="E-mail address" required/>
+                        {% endif %}
+                    {% else %}
+                        <div class="col-md-12 pb-3">
+                            <label for="username" class="sr-only">Name:</label>
+                            <input type="text" id="username" name="contact-name" class="form-control" placeholder="Name" required/>
+                        </div>
+                        <div class="col-md-12 pb-3">
+                            <label for="email" class="sr-only">E-mail:</label>
+                            <input type="email" id="email" name="contact-email" class="form-control" placeholder="E-mail address" required/>
+                        </div>
+                    {% endif %} 
+                    <div class="col-md-12 pb-3">
+                        <label for="contact-message" class="sr-only">Message:</label>
+                        <textarea name="contact-message" id="contact-message" class="form-control" rows="10" placeholder="Message" required></textarea>
+                    </div>
+                    <div class="col-md-12">
+                        <button class="btn btn-block btn-dark btn-form" type="submit">Send</button>
+                    </div>
+                    
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

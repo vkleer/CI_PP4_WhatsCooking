@@ -14,7 +14,7 @@
         <script src="{% static 'js/meal-planner.js' %}"></script>
     </head>
     <body>
-        <nav id="navbar" class="navbar navbar-expand-lg navbar-main bg-main-dark">
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-main bg-main-dark px-3">
             <div class="container-fluid">
               <a class="navbar-brand" href="/">
                 <i class="fas fa-egg"> </i>
@@ -95,15 +95,15 @@
               {% endblock content %}
           </main>
     </body>
-    <div class="container">
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 mt-4 border-top">
-                <div class="col-md-4 d-flex align-items-center">
-                    <span class="text-muted">© 2022 What's Cooking?</span>
+    <div class="container-fluid bg-main-dark">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 px-3">
+                <div class="col-md-6">
+                    <span class="text-white">© Vilayat Kleer</span>
                 </div>
-                <ul class="nav col-md-4 justify-content-end social-media">
-                    <li class="ms-3"><a class="text-muted" href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                    <li class="ms-3"><a class="text-muted" href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                    <li class="ms-3"><a class="text-muted" href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <ul class="nav col-md-6 justify-content-end social-media">
+                    <li class="ms-4"><a class="text-white" href="https://www.github.com/vkleer" target="_blank" rel="noopener" aria-label="The developers' Github page (opens new tab)"><i class="fa-brands fa-github"></i></a>
+                    <li class="ms-4"><a class="text-white" href="https://www.twitter.com/" target="_blank" rel="noopener" aria-label="Twitter (opens new tab)"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li class="ms-4"><a class="text-white" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram (opens new tab)"><i class="fa-brands fa-instagram"></i></a></li>
                 </ul>
         </footer>
     </div>

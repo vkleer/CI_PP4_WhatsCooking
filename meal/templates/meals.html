@@ -3,9 +3,22 @@
 {% block header_title %}
     Recipe list
 {% endblock header_title %}
-{% block header_text %}
-    Find your new favorite recipe here, {{ user.first_name }}!
-{% endblock header_text %}
+{% block header_extra %}
+    <div class="row">
+        <div class="col-9">
+            {% if user.is_authenticated %}
+                <p class="lead fw-normal">
+                    Find your new favorite recipe here, {{ user.first_name }}!
+                </p> 
+            {% else %}
+                <p class="lead fw-normal">
+                    Your new favorite recipe awaits - create an account now to check them out!
+                </p> 
+                <a href="{% url 'account_signup' %}" class="btn btn-dark">Create account</a>
+            {% endif %}
+        </div>
+    </div>
+{% endblock header_extra %}
 {% block content %}
     <div class="container py-5">
         <div class="row mb-5">

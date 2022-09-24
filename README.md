@@ -15,7 +15,8 @@
     2. [User Requirements and Expectations](#user-requirements-and-expectations)
 3. [User Stories](#user-stories)
     1. [User](#user)
-    2. [Application Owner](#application-owner)
+    1. [Returning User](#returning-user)
+    3. [Application Owner](#application-owner)
 4. [Technical Design](#technical-design)
 5. [Technologies Used](#technologies-used)
     1. [Languages](#languages)
@@ -62,9 +63,32 @@
 
 ## User Stories
 
-### User
+### Anonymous User
+1. As an anonymous user, I want to be able to view the home page, so I know what the application is about
+2. As an anonymous user, I want to be able to view the recipe list, so I know what the application has to offer
+3. As an anonymous user, I want to be able to create an account, so I can start using the application
+
+### Registered User
+4. As a registered user, I want to be able to log in with my account
+5. As a registered user, I want to be able to create a meal plan for a specific date
+6. As a registered user, I want to be able to add meals to a meal plan
+7. As a registered user, I want to be able to edit any of my meal plans
+8. As a registered user, I want to be able to delete any of my meal plans
+9. As a registered user, I want to have a weekly overview of my meal plans in my meal planner
+10. As a registered user, I want to be able to pick the first day of the week of my weekly overview
+11. As a registered user, I want to be able to view the details of each recipe in the recipe list
+12. As a registered user, I want to be able to view my account details on my profile page
+13. As a registered user, I want to be able to delete my account on my profile page
+14. As a registered user, I want to be able to log out when I'm done
 
 ### Application Owner
+15. As the application owner, I want to be able to add new recipes to the recipe list
+16. As the application owner, I want to be able to delete recipes from the recipe list
+17. As the application owner, I want to restrict most of the applications' functionality for anonymous users to encourage them to create an account
+18. As the application owner, I want users to stay on the application when they receive an HTTP response of 400, 403, 404 or 500
+19. As the application owner, I want users to be able to contact me with a contact form
+20. As the application owner, I want the users' input on forms to be validated
+21. As the application owner, I want to provide a responsive application for all devices
 
 ## Technical Design
 

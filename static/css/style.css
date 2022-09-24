@@ -1,9 +1,24 @@
-/* overriding default elements/classes */
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Reem+Kufi+Fun&family=Quicksand&display=swap');
 
+/* overriding default elements/classes */
 body {
     height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+p, ul, a, button, span {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.05rem;
+}
+
+.lead {
+    font-family: 'Quicksand', sans-serif;
 }
 
 hr {
@@ -16,7 +31,6 @@ hr {
 }
 
 /* reusable classes */
-
 .bg-main {
     background-color: #407464;
 }
@@ -25,10 +39,6 @@ hr {
 }
 .bg-accent {
     background-color: #f5e4e4;
-}
-
-.text-h {
-    color: #407464;
 }
 
 .header-hr {
@@ -50,15 +60,14 @@ hr {
 }
 
 /* base template */
-
 .msg-col {
     margin-bottom: -75px;
 }
 
 /* navbar */
-
 .navbar-brand {
     color: #fff;
+    font-family: 'Reem Kufi Fun', sans-serif;
     font-size: 1.35rem!important;
 }
 
@@ -85,7 +94,6 @@ hr {
 }
 
 /* footer */
-
 footer {
     margin-top: auto;
     padding: 0 28px;
@@ -101,13 +109,6 @@ footer {
 }
 
 /* index template */
-
-.tool-icon {
-    font-size: 9rem;
-    margin: 0 auto;
-    padding-top: 0.75rem;
-}
-
 .tool-container {
     display: flex;
     flex-direction: column;
@@ -122,8 +123,13 @@ footer {
     border-radius: 1rem;
 }
 
-/* login template */
+.tool-icon {
+    font-size: 9rem;
+    margin: 0 auto;
+    padding-top: 0.75rem;
+}
 
+/* login template */
 .login-card {
     max-width: 420px;
     margin: 0 auto;
@@ -172,17 +178,12 @@ input[name="login"]:focus, input[name="password"]:focus {
  }
 
  /* log out template */
-
  .logout-text {
     padding: 10px 0;
     text-align: center;
  }
 
-/* profile template */
-
-
 /* meal_planner template */
-
 #meal-planner {
     width: 420px;
 }
@@ -218,7 +219,6 @@ label[for="id_meal_planner"], label[for="id_date"]  {
 }
 
 /* meals template */
-
 #meal-search {
     margin-top: 40px;
 }
@@ -231,5 +231,3 @@ label[for="id_meal_planner"], label[for="id_date"]  {
     background-color: #f5e4e498;
     border-color: #f5e4e4;
 }
-
-/* meal_detail template */

@@ -37,10 +37,16 @@
 ## Project Goals
 
 ### User Goals
-- 
+- Be able to create meal plans to become a better meal-prepper
+- Be able to edit or delete my meal plans at any given time
+- Have an overview of all my meal plans for a set week
+- Get inspired by finding new recipes
 
 ### Application Owner Goals
-- 
+- Create an application that helps users track and prep their meals
+- Provide users with a database full of recipes for them to choose and get inspired by
+- Provide feedback to users on any important action (CRUD, log in, log out etc.)
+- Deliver an aesthetically pleasing design to the application that makes users want to come back
 
 ## User Experience
 

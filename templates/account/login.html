@@ -12,25 +12,24 @@
 {% block content %}
   <div class="container py-5">
     <div class="row pb-5">
-        <div class="col-md-8 offset-md-2">
-          <div class="card login-card bg-light">
-            <div class="card-body">
-              <form class="login" method="POST" action="{% url 'account_login' %}">
-                <div class="login-container">
-                  {% csrf_token %}
-                  {{ form.as_p }}
-                  {% if redirect_field_value %}
-                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                  {% endif %}
-                  <button class="btn btn-block btn-dark btn-form" type="submit">{% trans "Log in" %}</button>
-                  <p class="login-signup">{% blocktrans %}If you do not have an account yet, then please
-                  <a href="{{ signup_url }}">create one here</a>.{% endblocktrans %}</p>
-                </div>
-              </form>
-            </div>
+      <div class="col-md-8 offset-md-2">
+        <div class="card login-card bg-light">
+          <div class="card-body">
+            <form class="login" method="POST" action="{% url 'account_login' %}">
+              <div class="login-container">
+                {% csrf_token %}
+                {{ form.as_p }}
+                {% if redirect_field_value %}
+                  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                {% endif %}
+                <button class="btn btn-block btn-dark btn-form" type="submit">{% trans "Log in" %}</button>
+                <p class="login-signup">{% blocktrans %}If you do not have an account yet, then please
+                <a href="{{ signup_url }}">create one here</a>.{% endblocktrans %}</p>
+              </div>
+            </form>
           </div>
-          
         </div>
+      </div>
     </div>
   </div>
 {% endblock %}

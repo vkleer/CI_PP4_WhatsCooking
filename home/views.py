@@ -56,7 +56,7 @@ def Contact(request):
         if contact_name and contact_message and contact_email:
             try:
                 send_mail(
-                    'Message from ' + contact_name +
+                    "What's Cooking - Message from " + contact_name +
                     ' (' + contact_email + ')',
                     contact_message,
                     contact_email,
@@ -69,7 +69,7 @@ def Contact(request):
                 )
         messages.success(
             request,
-            'Your contact form has been submitted - thank you'
+            'Your contact form has been submitted - thank you '
             + contact_name + '!'
         )
         return render(request, 'contact.html', {

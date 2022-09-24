@@ -28,7 +28,7 @@
                 {% csrf_token %}
                 <div class="login-container"">
                     {% if request.user.is_authenticated %}
-                        <div class="col-md-6 pb-3">
+                        <div class="col-md-12 pb-3">
                             <label for="name" class="sr-only">Name:</label>
                             <input type="text" id="name" name="contact-name" class="form-control" placeholder= "{{ user.username }}" disabled/>
                         </div>
@@ -39,6 +39,7 @@
                         {% else %}
                             <input type="email" id="email" name="contact-email" class="form-control" placeholder="E-mail address" required/>
                         {% endif %}
+                        </div>
                     {% else %}
                         <div class="col-md-12 pb-3">
                             <label for="username" class="sr-only">Name:</label>

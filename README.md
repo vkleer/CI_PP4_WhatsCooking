@@ -51,10 +51,14 @@
 ## User Experience
 
 ### Target Audience
-- 
+- People who want to keep track of their daily meals
+- Meal preppers who want an organised space for their meal plans
+- Cooking enthusiasts who want to get inspired by new recipes without looking on multiple websites
 
 ### User Requirements and Expectations
-- 
+- A simple, elegant application that anyone can use
+- Clear feedback provided after performing an important action
+- Providing a personal touch by referring to the users' username and first name throughout the application
 
 ## User Stories
 

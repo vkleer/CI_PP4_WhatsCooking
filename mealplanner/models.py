@@ -21,11 +21,18 @@ class MealPlanner(models.Model):
 
 
 class MealToMealPlan(models.Model):
-    meal = models.ForeignKey(Meal, on_delete=models.CASCADE, blank=True, null=True)
+    meal = models.ForeignKey(
+        Meal, on_delete=models.CASCADE, blank=True, null=True
+    )
     meal_plan = models.ForeignKey('MealPlan', on_delete=models.CASCADE)
 
     def __str__(self):
-        return '(' + str(self.id) + ') ' + str(self.meal) + ' to meal plan ' + datetime.strptime(format(self.meal_plan.date), '%Y-%M-%d').strftime('%d/%M/%Y')
+        return (
+            '(' + str(self.id) + ') ' + str(self.meal) + ' to meal plan ' +
+            datetime.strptime(
+                format(self.meal_plan.date), '%Y-%M-%d'
+            ).strftime('%d/%M/%Y')
+        )
 
 
 class MealPlan(models.Model):
@@ -44,7 +51,11 @@ class MealPlan(models.Model):
         )
 
     def __str__(self):
-        return 'Meal plan ' + datetime.strptime(format(self.date), '%Y-%M-%d').strftime('%d/%M/%Y') + ' for ' + self.meal_planner.user.username
+        return (
+            'Meal plan ' + datetime.strptime(
+                format(self.date), '%Y-%M-%d'
+            ).strftime('%d/%M/%Y') + ' for ' + self.meal_planner.user.username
+        )
 
 
 class Calendar(models.Model):

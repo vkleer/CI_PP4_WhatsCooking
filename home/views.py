@@ -63,14 +63,14 @@ def Contact(request):
                     [os.environ.get('EMAIL_HOST_USER')],
                 )
             except BadHeaderError:
-                 messages.error(
+                messages.error(
                     request,
                     'Invalid header found.'
                 )
         messages.success(
             request,
-            'Your contact form has been submitted - thank you '
-            + contact_name + '!'
+            'Your contact form has been submitted - thank you ' +
+            contact_name + '!'
         )
         return render(request, 'contact.html', {
             'contact_name': contact_name

@@ -1,6 +1,8 @@
 from django.contrib import admin
-from .models import Meal, Ingredient, IngredientToRecipe, MealType, Diet, PrepTime, CookTime
 from django_summernote.admin import SummernoteModelAdmin
+from .models import (
+    Meal, Ingredient, IngredientToRecipe, MealType, Diet, PrepTime, CookTime
+)
 
 
 class IngredientToRecipeInline(admin.TabularInline):

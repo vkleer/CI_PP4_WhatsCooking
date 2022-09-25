@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block header_title %}
+    403
+{% endblock header_title %}
+{% block header_text %}
+    Forbidden
+{% endblock header_text %}
+{% block content %}
+<div class="container py-5">
+    <div class="row pb-5">
+      <div class="col-md-8 offset-md-2">
+        <div class="card login-card bg-light">
+          <div class="card-body">
+            <form class="login" method="POST" action="{% url 'account_login' %}">
+              <div class="login-container text-center">
+                <h5 class="pb-3">You do not have the required permission to access this page.</h5>
+                <button class="btn btn-block btn-dark btn-form">Back to home page</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

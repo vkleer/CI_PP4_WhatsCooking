@@ -90,14 +90,19 @@
 20. As the application owner, I want the users' input on forms to be validated
 21. As the application owner, I want to provide a responsive application for all devices
 
-## Technical Design
+## Design
 
-### Flowchart
-A flowchart has been created to display the structure and logic of the program.
+### Colours
+The colours I used for the application have been picked using the [Adobe Color Wheel](https://color.adobe.com/create/color-wheel). I first found a 'main' colour that I wanted to use (#407464, used in the bg-main class) before moving on to the other colours. The 'Split Complementary' colour harmony rule suggested a dark pink colour, which I took and customized to a soft grey-pink colour (#f5e4e4, used in the bg-accent class) to make it easier to look at and use in the application. Finally, I simply took the main colour and made it a few shades darker to use for the navbar and footer (#2e4b42, used in the bg-main-dark class).
 
-<details><summary>Database</summary>
-    <img src="docs/">
+<details><summary>Screenshot of Adobe Color Wheel</summary>
+    <img src="docs/design/adobe-color-wheel.JPG">
 </details>
+
+### Fonts
+The fonts that I used are [Reem Kufi Fun](https://fonts.google.com/specimen/Reem+Kufi+Fun) for the logo, [Montserrat](https://fonts.google.com/specimen/Montserrat) for all the headings and [Quicksand](https://fonts.google.com/specimen/Quicksand) for all other text elements. They are all sans-serif fonts, but have a few distinct differences: The Montserrat font creates a nice contrast with the other text elements by having a simple design and bold font-weight, while the Quicksand font is more playful, yet legible. The Reem Kufi Fun font stands out from the other fonts with its unique 'W', which is why I found it to be suitable for the logo. All fonts have sans-serif as a fallback.
+
+## Technical Design
 
 ## Technologies Used
 

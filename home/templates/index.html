@@ -9,13 +9,7 @@
         <p class="lead fw-normal">
             Welcome to What's Cooking! We are passionate about meal prepping, and providing you with the best meal prepping tools. Stay on top of your prep
             game and make the most of your time by using What's Cooking.
-            <br><br>
-            Explore our tools and feature now!
         </p>
-        {% if user.is_authenticated %}
-        {% else %}
-            <a href="{% url 'account_signup' %}" class="btn btn-dark">Create account</a>
-        {% endif %}
     </div>
 </div>
 {% endblock header_extra %}
@@ -32,6 +26,14 @@
                     and you will no longer forget What's Cooking for dinner. The plan you make can be edited at any time and will 
                     contain links to the recipes that you picked.
                 </p>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'meal_planner' %}" class="btn btn-dark">To meal planner</a>
+                {% else %}
+                    <p>
+                        Only registered users are able to use the meal planner tool - so what are you waiting for?
+                    </p>
+                    <a href="{% url 'account_signup' %}" class="btn btn-dark">Create account</a>
+                {% endif %}
             </div>
         </div>
         <div class="row p-5 bg-accent">
@@ -42,6 +44,7 @@
                     from the best recipe websites that the internet can serve. Filter by breakfast, lunch, dinner, snacks, or 
                     even dietary requirements. Your next favorite meal is only a few clicks away!
                 </p>
+                <a href="{% url 'recipe_list' %}" class="btn btn-dark">To recipe list</a>
             </div>
             <div class="col-sm-12 pb-5 order-sm-1 col-md-5 pb-md-0 order-md-2 text-center">
                 <i class="fas fa-list-ol tool-icon"></i>

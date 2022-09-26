@@ -121,7 +121,7 @@ The application contains the following pages:
     - New meal plans can be created by clicking on the '+' button to take users to the 'Add meal plan' page
     - Existing meal plans can be edited by clicking on the pen button to take users to the 'Edit meal plan' page
     - Existing meal plans can be deleted by clicking on the bin button, triggering a modal for confirmation, after which the meal plan will be deleted
-- The add meal plan page where logged in users can create a new meal plan for the selected date, allowing up to 10 meals per meal plan
+- The create meal plan page where logged in users can create a new meal plan for the selected date, allowing up to 10 meals per meal plan
 - The edit meal plan page where logged in users can edit an existing meal plan by changing or deleting meals from the plan
 - The recipe list page where users can browse all recipes
     - Users can filter by meal type (breakfast, lunch, dinner, snack), diet type (vegetarian, vegan) or simply use the search bar
@@ -137,18 +137,33 @@ The application contains the following pages:
 ## Technologies Used
 
 ### Languages
-- [**Python**](https://www.python.org/)
+- [**HTML**](https://www.python.org/)
+- [**CSS**](https://www.python.org/)
+- [**JavaScript**](https://www.python.org/)
+- [**Python 3.8.11**](https://www.python.org/)
 
-### Tools
+### Framework
+- [**Django 3.2.15**](https://www.djangoproject.com/)
+
+### Tools & Libraries
 - [**Git**](https://git-scm.com/) was used for version control
 - [**GitHub**](https://github.com/) was used as a remote repository to store the all project files
 - [**Gitpod**](https://gitpod.io/) was used as the IDE to write the project code
-- [**Google Sheets**](https://www.google.com/sheets/about/) was used to store the players' account details
 - [**Heroku**](https://dashboard.heroku.com/) was used to deploy the project
+- [**PostgreSQL**](https://www.postgresql.org/) was used to store the project data, specifically the 'Heroku Postgres' add-on
+- [**Google Fonts**](http://pep8online.com/) was used to supply the fonts for my project
+- [**WC3's Markup Validation Service**](https://validator.w3.org/) was used to validate my HTML code
+- [**W3C's CSS Validation Service**](https://jigsaw.w3.org/css-validator/) was used to validate my CSS code
+- [**JShint**](https://jshint.com/) was used to validate my JavaScript code
 - [**PEP8**](http://pep8online.com/) was used to validate my Python code
-
-### Libraries
-- [**library**](https://) 
+- [**Google Chrome's DevTools**](http://pep8online.com/) was used to benchmark the applications' performance, accessibility, best practices and SEO
+- [**Wave WebAIM's web accessibility evaluation tool**](https://wave.webaim.org/) was used to validate my Python code
+- [**Bootstrap 5.1**](https://getbootstrap.com/docs/5.1/getting-started/download/) was used for the application layout and some of the styling
+- [**Cloudinary**](https://) was used to store static files
+- [**Crispy Forms**](https://github.com/django-crispy-forms/django-crispy-forms) was used to nicely format the forms used in my project
+- [**Crispy Bootstrap 5**](https://github.com/django-crispy-forms/crispy-bootstrap5) was used to install the Bootstrap 5 template pack for Crispy Forms
+- [**Summernote**](https://github.com/summernote/django-summernote) was used for the meal description field on the admin page, allowing me to style the preparation instructions
+- [**Allauth**](https://github.com/pennersr/django-allauth) was used to take care of the accounts in the project
 
 
 ## Features

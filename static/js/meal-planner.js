@@ -1,5 +1,5 @@
 function setDelBtnToMealPlanId(currentButton) {
-    mealPlanId = currentButton.parentNode.querySelector('input[name=meal_plan_id]').value
+    mealPlanId = currentButton.parentNode.querySelector('input[name=meal_plan_id]').value;
     modal = document.getElementById('deletion-form');
     modal.setAttribute('action', `delete_meal_plan/${mealPlanId}`);
 }

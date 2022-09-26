@@ -20,12 +20,12 @@ function getCalendarCells() {
         if (cells[i].children.length > 3 ) {
             let deleteButton = document.createElement('button');
             deleteButton.classList.add('btn', 'btn-danger', 'btn-del');
-            deleteButton.innerHTML = `<i class="far fa-trash-alt"></i>`;
+            deleteButton.innerHTML = `<i class="far fa-trash-alt"></i><span class="sr-only">Delete meal plan</span>`;
             deleteButton.setAttribute('data-bs-toggle', 'modal');
             deleteButton.setAttribute('data-bs-target', '#deletionModal');
             mealPlanButton.parentNode.insertBefore(deleteButton, mealPlanButton.nextSibling);
             cells[i].style.cssText = 'vertical-align:top';
-            mealPlanButton.innerHTML = `<i class="fas fa-pen"></i>`;
+            mealPlanButton.innerHTML = `<i class="fas fa-pen"></i><span class="sr-only">Edit meal plan</span>`;
             mealPlanButton.href = `edit_meal_plan/${mealPlanId.value}`;
             deleteButton.addEventListener('click', function() {
                 setDelBtnToMealPlanId(deleteButton);
@@ -36,7 +36,7 @@ function getCalendarCells() {
             mealPlanButton.classList.add('btn-add');
             mealPlanButton.href = `create_meal_plan/${mealPlanDate.value}`;
             cells[i].style.cssText = 'vertical-align:center';
-            mealPlanButton.innerHTML = `<i class="fas fa-plus"></i>`;
+            mealPlanButton.innerHTML = `<i class="fas fa-plus"></i><span class="sr-only">Create meal plan</span>`;
         }
     }
 }

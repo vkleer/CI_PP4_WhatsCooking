@@ -13,10 +13,18 @@
                 <h1 class="meal-name">
                     {{ meal.name }}
                 </h1>
+                <i class="fas fa-utensils"></i>
+                <p>
+                    <strong>Meal type:</strong> {{ meal.type }} <br>
+                    {% if meal.diet != None %}
+                        <strong>Diet type:</strong> {{ meal.diet }} <br>
+                    {% else %}
+                    {% endif %}
+                </p>
+                <i class="fas fa-clock"></i>
                 <p>
                     <strong>Prep time:</strong>  {{ meal.prep_time }} <br>
-                    <strong>Cooking time:</strong> {{ meal.cook_time }} <br>
-                    <strong>Diet type:</strong> {{ meal.diet }}
+                    <strong>Cook time:</strong> {{ meal.cook_time }}
                 </p>
             </div>
             <div class="d-md-block col-sm-12 col-md-7">

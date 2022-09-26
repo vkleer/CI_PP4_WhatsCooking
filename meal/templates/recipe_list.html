@@ -69,15 +69,14 @@
                                         <img class="card-img-top pt-1" src="{{ meal.image.url }}" alt="{{ meal.name }}">
                                         <div class="card-body">
                                             <h1 class="card-title">{{ meal.name }}</h1>
-                                            <p class="card-text">
-                                                <strong>Meal type:</strong> <span class="meal-type">{{ meal.type }}</span> <br>
+                                            <p class="card-text text-start">
+                                                <strong>Meal type:</strong> {{ meal.type }} <br>
                                                 {% if meal.diet != None %}
-                                                    <strong>Diet type:</strong> <span class="diet-type">{{ meal.diet }}</span> <br>
+                                                    <strong>Diet type:</strong> {{ meal.diet }} <br>
                                                 {% else %}
-                                                    <span class="diet-type"></span>
                                                 {% endif %}
                                                 <strong>Prep time:</strong>  {{ meal.prep_time }} <br>
-                                                <strong>Cooking time:</strong> {{ meal.cook_time }}
+                                                <strong>Cook time:</strong> {{ meal.cook_time }}
                                             </p>
                                         </div>
                                     </a>
@@ -99,7 +98,7 @@
                                         <img class="card-img-top pt-1" src="{{ meal.image.url }}" alt="{{ meal.name }}">
                                         <div class="card-body">
                                             <h1 class="card-title">{{ meal.name }}</h1>
-                                            <p class="card-text">
+                                            <p class="card-text text-start">
                                                 <strong>Meal type:</strong> <span class="meal-type">{{ meal.type }}</span> <br>
                                                 {% if meal.diet != None %}
                                                     <strong>Diet type:</strong> <span class="diet-type">{{ meal.diet }}</span> <br>
@@ -129,7 +128,7 @@
                                         <img class="card-img-top pt-1" src="{{ meal.image.url }}" alt="{{ meal.name }}">
                                         <div class="card-body">
                                             <h1 class="card-title">{{ meal.name }}</h1>
-                                            <p class="card-text">
+                                            <p class="card-text text-start">
                                                 <strong>Meal type:</strong> <span class="meal-type">{{ meal.type }}</span> <br>
                                                 {% if meal.diet != None %}
                                                     <strong>Diet type:</strong> <span class="diet-type">{{ meal.diet }}</span> <br>
@@ -159,7 +158,7 @@
                                         <img class="card-img-top pt-1" src="{{ meal.image.url }}" alt="{{ meal.name }}">
                                         <div class="card-body">
                                             <h1 class="card-title">{{ meal.name }}</h1>
-                                            <p class="card-text">
+                                            <p class="card-text text-start">
                                                 <strong>Meal type:</strong> <span class="meal-type">{{ meal.type }}</span> <br>
                                                 {% if meal.diet != None %}
                                                     <strong>Diet type:</strong> <span class="diet-type">{{ meal.diet }}</span> <br>

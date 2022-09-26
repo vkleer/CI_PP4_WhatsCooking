@@ -87,8 +87,10 @@
 17. As the application owner, I want to restrict most of the applications' functionality for anonymous users to encourage them to create an account
 18. As the application owner, I want users to stay on the application when they receive an HTTP response of 400, 403, 404 or 500
 19. As the application owner, I want users to be able to contact me with a contact form
-20. As the application owner, I want the users' input on forms to be validated
-21. As the application owner, I want to provide a responsive application for all devices
+20. As the application owner, I want users to be able to find me on GitHub
+21. As the application owner, I want the users' input on forms to be validated
+22. As the application owner, I want users to be able to navigate around the application easily
+23. As the application owner, I want to provide a responsive application for all devices
 
 ## Design
 
@@ -167,10 +169,104 @@ The application contains the following pages:
 
 
 ## Features
-The website has a total of x main features:
+The website has a total of 15 features:
 
-### Feature
-- description
+### Logo and navigation bar
+- Font Awesome icon combined with a Google Fonts font is used as the logo, placed on the left as is conventional
+- Is present on every page
+- Is responsive and works on all screen sizes
+- Covers user story **22** and **23**
+
+### Footer
+- At the bottom of the page as is conventional, using the same colour as the navigation bar for consistency
+- Contains a link to my GitHub account, using a Font Awesome GitHub icon
+- Contains a link to the contact page, using a matching Font Awesome icon
+- Is present on every page
+- Covers user story **20** and **23**
+
+### Flash messages
+- Flash messages are displayed to users when performing any important action, like creating, editing or deleting a meal plan or logging into their account, providing them with meaningful feedback
+- Covers user story ****
+
+### Home page
+- Introduces users to the application
+- Provides a brief overview of the applications' features
+- Contains call-to-action buttons to the meal planner (if users logged in, otherwise a 'Create account' button is shown), recipe list and contact form
+- Covers user story ****
+
+### Create account page
+- Allows new users to create an account
+- Users need to provide their email address, username, first name and a password
+- The email address and username have to be unique
+- All input is validated
+- After their account has been created, Users are automatically logged in and taken to the meal planner page
+- Flash message is displayed after account has been created
+- Covers user story ****
+
+### Login page
+- Allows returning users to log in to their account
+- Users need to enter their username and password - an empty or semi-empty form cannot be submitted
+- Users are taken to the meal planner page after successfully logging in
+- Flash message is displayed after users have logged in
+- Covers user story ****
+
+### Logout page
+- Allows logged in users to log out of their account
+- Flash message is displayed after users have logged out
+- Covers user story
+
+### Profile page
+- Allows users to view their account details, listing their username, first name, email address and creation date
+- Allows users to delete their account should they wish to do so
+    - Instead of a separate page, a modal is used to confirm if the user wishes to delete their account
+- Flash message is displayed after users have deleted their account
+- Covers user story ****
+
+### Meal planner page
+- Provides users with a weekly overview of their meal plans
+- Allows users to pick the first day of their weekly overview, allowing them to look back at past meal plans or plan ahead
+- Provides a link to the 'Add meal plan' page
+- Provides a link to the 'Edit meal plan' page
+- Allows users to delete an existing meal plan
+    - Instead of a separate page, a modal is used to confirm if the user wishes to delete a specific meal plan
+- Covers user story ****
+
+### Add meal plan page
+- Allows users to create a new meal plan for the selected date
+- Allows users to add up to 10 meals
+- Flash message is displayed after a meal plan has been created
+- Covers user story ****
+
+### Edit meal plan page
+- Allows users to edit their selected, existing meal plan
+- Allows users to delete and add any available meal, limited to a maximum of 10 meals
+- Flash message is displayed after a meal plan had been updated
+- Covers user story ****
+
+### Recipe list page
+- Allows both anonymous and registered users to browse all available recipes
+- Provides a link to the recipes' detail page, which only registered, logged in users can access
+- Covers user story ****
+
+### Recipe list filter
+- Allows both anonymous and registered users to filter all available recipes
+- Users can filter by meal type (breakfast, lunch, dinner and snack)
+- Users can filter by diet type (vegetarian, vegan)
+- Users can filter by using the search bar
+- Users can combine the meal type, diet type and search bar filters
+- Covers user story ****
+
+### Contact page
+- Allows both anonymous and registered, logged in users to send me a message via a contact form
+- The contact form contains a name, email address and message field, all of which are required
+- If a registered user is logged in, their name and email address are automatically added to the corresponding fields - the fields cannot be edited
+- Flash message is displayed after the form has been successfully submitted
+- Covers user story ****
+
+### Custom HTTP response pages (400, 403, 404 and 500)
+- Keeps users in the application flow if they encounter an error by displaying a custom HTTP response page
+- Contains a button that takes users back to the home page
+- Covers user story ****
 
 <details><summary>Screenshot of feature</summary>
     <img src="docs/features/feature.JPG">

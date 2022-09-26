@@ -102,6 +102,36 @@ The colours I used for the application have been picked using the [Adobe Color W
 ### Fonts
 The fonts that I used are [Reem Kufi Fun](https://fonts.google.com/specimen/Reem+Kufi+Fun) for the logo, [Montserrat](https://fonts.google.com/specimen/Montserrat) for all the headings and [Quicksand](https://fonts.google.com/specimen/Quicksand) for all other text elements. They are all sans-serif fonts, but have a few distinct differences: The Montserrat font creates a nice contrast with the other text elements by having a simple design and bold font-weight, while the Quicksand font is more playful, yet legible. The Reem Kufi Fun font stands out from the other fonts with its unique 'W', which is why I found it to be suitable for the logo. All fonts have sans-serif as a fallback.
 
+### Structure
+The application uses common web design conventions and is structured in an intuitive, easy to use way. Each page has a header and subtitle to clearly state its purpose and colour is used sparsly to increase both readability and keep the design clean.
+
+The navigation bar has a logo on the left and the links to the right. When the screen size is too small to display the links, the menu turns into a collapsable menu with the familiar 'hamburger' icon.
+
+The footer is at the bottom of the page and contains links to my Github page and a contact form.
+
+The application contains the following pages:
+
+- The index page with an introduction to the application and a brief overview of its features
+- The sign up page where new users can create an account
+- The log in page where users can log in to the application
+- The log out page where logged in users can log out of the application
+- The meal planner page where: 
+    - Logged in users will see a weekly overview of their meal plans
+    - The date of the first day can be picked to generate a new weekly schedule
+    - New meal plans can be created by clicking on the '+' button to take users to the 'Add meal plan' page
+    - Existing meal plans can be edited by clicking on the pen button to take users to the 'Edit meal plan' page
+    - Existing meal plans can be deleted by clicking on the bin button, triggering a modal for confirmation, after which the meal plan will be deleted
+- The add meal plan page where logged in users can create a new meal plan for the selected date, allowing up to 10 meals per meal plan
+- The edit meal plan page where logged in users can edit an existing meal plan by changing or deleting meals from the plan
+- The recipe list page where users can browse all recipes
+    - Users can filter by meal type (breakfast, lunch, dinner, snack), diet type (vegetarian, vegan) or simply use the search bar
+- The recipe page where logged in users can find the recipe ingredients and instructions and a picture of the finished meal
+- The profile page where logged in users can find their username, first name, email address, creation date and a 'Delete account' button if they wish to have their profile delete
+    - The 'Delete account' button triggers a modal for confirmation, after which the users' account and all its associated data will be deleted
+- The contact page where users can contact me to leave feedback, report bugs, or simply send a message
+    - Logged in users will have the 'Name' and 'E-mail address' fields pre-populated with their data and cannot be edited
+- The 400, 403, 404 and 500 pages to handle HTTP responses and keep users inside the application flow
+
 ## Technical Design
 
 ## Technologies Used

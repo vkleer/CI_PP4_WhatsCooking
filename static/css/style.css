@@ -129,13 +129,13 @@ footer {
     padding-top: 0.75rem;
 }
 
-/* login template */
-.login-card {
+/* account templates */
+.account-card {
     max-width: 420px;
     margin: 0 auto;
  }
 
-.login-container {
+.account-container {
     padding: 10px 20px;
     margin: 0 auto;
 }
@@ -184,7 +184,6 @@ input[name="login"]:focus, input[name="password"]:focus {
     color: #dc3545!important;
  }
 
- /* log out template */
  .logout-text {
     padding: 10px 0;
     text-align: center;

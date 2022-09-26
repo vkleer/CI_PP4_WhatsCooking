@@ -12,7 +12,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
 }
 
-p, ul, a, button, span, input {
+p, ul, a, button, span, input, select {
     font-family: 'Quicksand', sans-serif;
     font-size: 1.05rem;
 }
@@ -172,6 +172,13 @@ input[name="login"]:focus, input[name="password"]:focus {
     margin-top: 1rem;
     margin-bottom: 0;
  }
+ .login-signup a {
+    font-weight: 700;
+    color: #2e4b42;
+ }
+ .login-signup a:hover {
+    color: #64a390;
+ }
 
  .errorlist {
     color: #dc3545!important;
@@ -188,8 +195,8 @@ input[name="login"]:focus, input[name="password"]:focus {
     width: 420px;
 }
 
-label[for="id_meal_options"], label[for="id_picked_date"],
-label[for="id_meal_planner"], label[for="id_date"]  {
+label[for="id_meal_options"], label[for="id_meal_planner"],
+label[for="id_date"], #div_id_picked_date > label  {
     display: none;
 }
 

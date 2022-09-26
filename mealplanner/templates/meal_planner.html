@@ -12,9 +12,9 @@
     <div class="container-fluid gx-0 py-5">
         <div class="d-flex justify-content-center pb-5">
             <form method="POST" action="{% url 'meal_planner' %}">
-                <label aria-labelledby="id_picked_date">
-                    <h5>Pick a date for day 1:</h5>
-                </label>
+                <h5>
+                    <label aria-labelledby="id_picked_date">Pick a date for day 1:</label>
+                </h5>
                 {% csrf_token %}
                 {{ calendar_form | crispy }}
                 <button type="submit" id="cal-btn" class="btn btn-dark w-100 mt-2">Pick day</button>
@@ -44,39 +44,42 @@
                                             <h4 class="text-center mt-2">Meal plan</h4>
                                             <hr>
                                             <ul>
-                                                <li><strong>Breakfast</strong></li>
-                                                <ul>
-                                                {% for meal in plan.meal.all %}
-                                                    {% if meal.type|stringformat:"s" == 'Breakfast' %}
-                                                        <li>
-                                                            {{ meal }}
-                                                        </li>
-                                                    {% endif %}
-                                                {% endfor %}
-                                                </ul>  
-                                                <li><strong>Lunch</strong></li>
-                                                <ul>
-                                                {% for meal in plan.meal.all %}
-                                                    {% if meal.type|stringformat:"s" == 'Lunch' %}
-                                                        <li>
-                                                            {{ meal }}
-                                                        </li>
-                                                    {% endif %}
-                                                {% endfor %}
-                                                </ul>
-                                                <li><strong>Dinner</strong></li>
-                                                <ul>
-                                                {% for meal in plan.meal.all %}
-                                                    {% if meal.type|stringformat:"s" == 'Dinner' %}
-                                                        <li>
-                                                            {{ meal }}
-                                                        </li>
-                                                    {% endif %}
-                                                {% endfor %}
-                                            </ul>
+                                                <li><strong>Breakfast</strong>
+                                                    <ul>
+                                                    {% for meal in plan.meal.all %}
+                                                        {% if meal.type|stringformat:"s" == 'Breakfast' %}
+                                                            <li>
+                                                                {{ meal }}
+                                                            </li>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                    </ul>  
+                                                </li>
+                                                <li><strong>Lunch</strong>
+                                                    <ul>
+                                                    {% for meal in plan.meal.all %}
+                                                        {% if meal.type|stringformat:"s" == 'Lunch' %}
+                                                            <li>
+                                                                {{ meal }}
+                                                            </li>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                    </ul>
+                                                </li>
+                                                <li><strong>Dinner</strong>
+                                                    <ul>
+                                                    {% for meal in plan.meal.all %}
+                                                        {% if meal.type|stringformat:"s" == 'Dinner' %}
+                                                            <li>
+                                                                {{ meal }}
+                                                            </li>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                    </ul>
+                                                </li>
                                             </ul>
                                             <hr>
-                                            <strong><p>Actions</p></strong>
+                                            <p class="fw-bold">Actions</p>
                                             <input type="hidden" name="meal_plan_id" value="{{ plan.id }}">
                                         {% endif %}
                                     {% endif %}

@@ -43,7 +43,7 @@
                                 {% if ingredients.meal == meal %}
                                     {% if ingredient == ingredients.ingredient %}
                                     <ul class="instructions">
-                                        <li>{{ ingredients.amount }} {{ ingredient }}</li>
+                                        <li>{{ ingredients.amount }} <strong>{{ ingredient }}</strong></li>
                                     </ul>
                                     {% endif %}
                                 {% endif %}

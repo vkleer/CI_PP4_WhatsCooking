@@ -224,7 +224,7 @@ label[for="id_date"], #div_id_picked_date > label  {
     bottom: 0; 
 }
 
-/* meals template */
+/* recipe_list template */
 #meal-search {
     margin-top: 40px;
 }
@@ -236,4 +236,10 @@ label[for="id_date"], #div_id_picked_date > label  {
 .btn-light:hover {
     background-color: #f5e4e498;
     border-color: #f5e4e4;
+}
+
+/* recipe template */
+
+.recipe-image {
+    width: 100%;
 }

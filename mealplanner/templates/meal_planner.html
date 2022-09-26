@@ -12,7 +12,7 @@
     <div class="container-fluid gx-0 py-5">
         <div class="d-flex justify-content-center pb-5">
             <form method="POST" action="{% url 'meal_planner' %}">
-                <label for="id_picked_date">
+                <label aria-labelledby="id_picked_date">
                     <h5>Pick a date for day 1:</h5>
                 </label>
                 {% csrf_token %}

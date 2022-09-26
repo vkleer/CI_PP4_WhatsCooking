@@ -1,5 +1,8 @@
 {% extends 'base.html' %} 
 
+{% block header_title %}
+    <span class="sr-only">{{ meal.name }} recipe</span>
+{% endblock header_title %}
 {% block header_text %}
 <a href="/recipe_list" class="btn btn-dark">Back to recipe list</a>
 {% endblock header_text %}

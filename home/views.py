@@ -69,7 +69,7 @@ def Contact(request):
                 )
         messages.success(
             request,
-            'Your message has been sent - thank you!' +
+            'Your message has been sent - thank you ' +
             contact_name + '!'
         )
         return render(request, 'contact.html', {

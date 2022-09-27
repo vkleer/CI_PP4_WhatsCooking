@@ -49,7 +49,7 @@
                                                     {% for meal in plan.meal.all %}
                                                         {% if meal.type|stringformat:"s" == 'Breakfast' %}
                                                             <li>
-                                                                {{ meal }}
+                                                                <a href="../recipe_list/recipe/{{ meal.id }}">{{ meal }}</a>
                                                             </li>
                                                         {% endif %}
                                                     {% endfor %}
@@ -60,7 +60,7 @@
                                                     {% for meal in plan.meal.all %}
                                                         {% if meal.type|stringformat:"s" == 'Lunch' %}
                                                             <li>
-                                                                {{ meal }}
+                                                                <a href="../recipe_list/recipe/{{ meal.id }}">{{ meal }}</a>
                                                             </li>
                                                         {% endif %}
                                                     {% endfor %}
@@ -71,7 +71,18 @@
                                                     {% for meal in plan.meal.all %}
                                                         {% if meal.type|stringformat:"s" == 'Dinner' %}
                                                             <li>
-                                                                {{ meal }}
+                                                                <a href="../recipe_list/recipe/{{ meal.id }}">{{ meal }}</a>
+                                                            </li>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                    </ul>
+                                                </li>
+                                                <li><strong>Snack</strong>
+                                                    <ul>
+                                                    {% for meal in plan.meal.all %}
+                                                        {% if meal.type|stringformat:"s" == 'Snack' %}
+                                                            <li>
+                                                                <a href="../recipe_list/recipe/{{ meal.id }}">{{ meal }}</a>
                                                             </li>
                                                         {% endif %}
                                                     {% endfor %}

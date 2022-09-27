@@ -17,6 +17,11 @@ p, ul, a, button, span, input, select {
     font-size: 1.05rem;
 }
 
+a {
+    color: #2e4b42;
+    text-decoration: none;
+}
+
 .lead {
     font-family: 'Quicksand', sans-serif;
 }

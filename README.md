@@ -605,7 +605,15 @@ The Python code has been validated using [Pep8 Validation Service](http://pep8on
 
 | **Bug** | **Fix** |
 |-------------|------------|
-| Description | Fix - [link to commit](https://github.com/vkleer/CI_PP4_WhatsCooking/commit/) |
+| Contact form too big when logged in, styling not consistent | Change column size of name field from md-6 to md-12 to take up the whole column, add input tag to styling rule - [link to commit](https://github.com/vkleer/CI_PP4_WhatsCooking/commit/72a0265165d5f268da9294682a54148d3e646b83) |
+| Icons in footer too small | Change styling rule to specifically target anchor elements inside the list that holds them - [link to commit](https://github.com/vkleer/CI_PP4_WhatsCooking/commit/f675d6e670f704c991d89c7e47fd351ff9212b0d) |
+| Bootstrap modal stopped working after upgrading to Bootstrap 5 | Change data attributes to data-bs attributes - [link to commit](https://github.com/vkleer/CI_PP4_WhatsCooking/commit/ae6d3a697633fce0221e9161807ca6727679e013) |
+| Footer not at the bottom of the page if content doesn't push it down | Set body height to 100vh, display to flex and flex direction to column. Then set the footers' margin-top to auto - [link to commit](https://github.com/vkleer/CI_PP4_WhatsCooking/commit/dc9817898a00dc3897e3df5b1b55182968cbee02) |
+| Footer not at the bottom of the page if content doesn't push it down | Set body height to 100vh, display to flex and flex direction to column. Then set the footers' margin-top to auto - [link to commit](https://github.com/vkleer/CI_PP4_WhatsCooking/commit/dc9817898a00dc3897e3df5b1b55182968cbee02) |
+| Scripts not working properly | Accidentally had scripts outside of body tag, moved them inside - [link to commit](https://github.com/vkleer/CI_PP4_WhatsCooking/commit/86a6a877206f0e83210bc50f519b043636424529) |
+| CreateMealPlan view doesn't grab the correct meal planner when creating a meal plan | Used the wrong user attribute, change from user.username to user.id - [link to commit](https://github.com/vkleer/CI_PP4_WhatsCooking/commit/40a225901d82bec44120a31d6776c192fb649493) |
+| Diet filter not working anymore | Accidentally deleted span that is used to target the right recipes, add it back in - [link to commit](https://github.com/vkleer/CI_PP4_WhatsCooking/commit/5855ac3cc0d22d28b797a9b537615c78c579c821) |
+| Meal plans can no longer be created | Crispy forms required a different set up to work properly with my form and formset, added proper formartting to make it work again - [link to commit](https://github.com/vkleer/CI_PP4_WhatsCooking/commit/bbebbab02991cba2a142e6377ea4b2235b3241df) |
 
 
 ## Deployment

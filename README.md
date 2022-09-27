@@ -3,7 +3,7 @@
 
 ![mockup-image.jpg](docs/mockup-image.jpg)
 
-[View the live website](https://herokuapp.com/)
+[View the live website](https://ci-pp4-whatscooking.herokuapp.com/)
 
 ## Table of Contents
 
@@ -17,23 +17,37 @@
     1. [User](#user)
     1. [Returning User](#returning-user)
     3. [Application Owner](#application-owner)
-4. [Technical Design](#technical-design)
-5. [Technologies Used](#technologies-used)
+4. [Design](#design)
+    1. [Colours](#colours)
+    2. [Fonts](#fonts)
+    3. [Structure](#structure)
+5. [Technical Design](#technical-design)
+    1. [Database](#database)
+        1. [Database Models](#database-models)
+6. [Technologies Used](#technologies-used)
     1. [Languages](#languages)
-    2. [Tools](#tools)
-    3. [Libraries](#libraries)
-6. [Features](#features)
-7. [Testing](#validation)
-    1. [Python Validation](#python-validation)
-    2. [Manual Testing - User Stories](#manual-testing---user-stories)
-    3. [Automated Testing](#automated-testing)
-8. [Bugs](#Bugs)
-9. [Deployment](#deployment)
+    2. [Framework](#framework)
+    3. [Tools & Libraries](#tools--libraries)
+7. [Features](#features)
+8. [Validation](#validation)
+    1. [HTML Validation](#html-validation)
+    2. [Css Validation](#css-validation)
+    3. [JavaScript Validation](#javascript-validation)
+    4. [Python Validation](#python-validation)
+    5. [Accessibility Wave WebAIM](#accessibility-wave-webaim)
+    6. [Performance Google Lighthouse](#performance-google-lighthouse)
+9. [Testing](#validation)
+    1. [Manual Testing - User Stories](#manual-testing---user-stories)
+    2. [Automated Testing](#automated-testing)
+10. [Bugs](#Bugs)
+11. [Deployment](#deployment)
     1. [GitHub](#github)
     2. [Heroku](#heroku)
-10. [Credits](#credits)
-    1. [Code](#code)
-11. [Acknowledgements](#acknowledgements)
+    3. [Google SMTP Server](#google-smtp-server)
+12. [Credits](#credits)
+    1. [Images](#images)
+    2. [Code](#code)
+13. [Acknowledgements](#acknowledgements)
 
 ## Project Goals
 
@@ -1034,8 +1048,7 @@ This application has been deployed using Heroku with the following steps:
 13. Either click on the 'Enable Automatic Deploys' button under 'Automatic deploys' to have the app deploy automatically on each push you make to the branch, or click on the 'Deploy Branch' button under 'Manual deploy'
 14. Wait for the app to build and be deployed. Once the app is ready, a message will be displayed saying 'App was successfully deployed' along with a button which takes you to your newly deployed app
 
-### Google emails
-
+### Google SMTP Server
 To send emails from your website using Google's SMTP server, the following steps are required:
 
 1. Preferable, create a new Gmail account

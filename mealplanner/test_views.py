@@ -15,7 +15,7 @@ class TestMealplannerView(TestCase):
             password='lAZK3iY0*sDn82',
             email='user@test.com')
         user.save()
-    
+
     def test_get_mealplanner_page(self):
         """
         Checks if the MealPlannerView page is displayed

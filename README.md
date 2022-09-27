@@ -307,10 +307,12 @@ Contains the following field:
 - [**Heroku**](https://dashboard.heroku.com/) was used to deploy the project
 - [**PostgreSQL**](https://www.postgresql.org/) was used to store the project data, specifically the 'Heroku Postgres' add-on
 - [**Google Fonts**](http://pep8online.com/) was used to supply the fonts for my project
+- [**Font Awesome**](https://fontawesome.com/) was used to supply the icons for my project
 - [**WC3's Markup Validation Service**](https://validator.w3.org/) was used to validate my HTML code
 - [**W3C's CSS Validation Service**](https://jigsaw.w3.org/css-validator/) was used to validate my CSS code
 - [**JShint**](https://jshint.com/) was used to validate my JavaScript code
 - [**PEP8**](http://pep8online.com/) was used to validate my Python code
+- [**Coverage**](https://github.com/nedbat/coveragepy) was used to produce reports on my python unit tests
 - [**Google Chrome's DevTools**](http://pep8online.com/) was used to benchmark the applications' performance, accessibility, best practices and SEO
 - [**Wave WebAIM's web accessibility evaluation tool**](https://wave.webaim.org/) was used to validate my Python code
 - [**Bootstrap 5.1**](https://getbootstrap.com/docs/5.1/getting-started/download/) was used for the application layout and some of the styling
@@ -958,6 +960,19 @@ The performance of the application has been measured with Google Lighthouse with
 </details>
 
 ### Automated Testing
+Some automated testing was carried out with by using Pythons' built-in unittest library. The screenshots that I added below are from the reports that were created by using coverage.
+
+<details><summary>Screenshot of home app coverage report</summary>
+    <img src="docs/testing/automated-testing/home-app-coverage.JPG">
+</details>
+
+<details><summary>Screenshot of mealplanner app coverage report</summary>
+    <img src="docs/testing/automated-testing/mealplanner-app-coverage.JPG">
+</details>
+
+<details><summary>Screenshot of meal app coverage report</summary>
+    <img src="docs/testing/automated-testing/meals-app-coverage.JPG">
+</details>
 
 ## Bugs
 
@@ -1021,7 +1036,20 @@ This application has been deployed using Heroku with the following steps:
 
 ## Credits
 
+### Images
+- All images and the recipes themselves were found on [BBC Food](https://www.bbc.co.uk/food/recipes/)
+
 ### Code
+- I wasn't quite sure how to structure my ingredients model, but [this post from Stackoverflow](https://stackoverflow.com/questions/70142026/how-to-handle-recipe-ingredients-in-databases) helped me figure it out
+- My ManyToMany fields weren't showing up on my admin panel, [this post from Stackoverflow](https://stackoverflow.com/questions/70118016/django-many-to-many-field-not-showing-on-admin-legacy-database) was very helpful
+- I wanted to add extra fields to my sign up form, which I was able to do thanks to [this post from Stackoverflow](https://stackoverflow.com/questions/12303478/how-to-customize-user-profile-when-using-django-allauth)
+- I was struggling to get next and previous days for my calendar, but [this article](https://datatofish.com/get-previous-current-and-next-day-system-dates-in-python/) helped me figure it out
+- I wanted to set the intial field values of some forms to something specific, but didn't know how - [this post from Stackoverflow] was very helpful
+- Though I had looked at project examples, I didn't quite understand how inline formsets worked - [this video on YouTube](https://www.youtube.com/watch?v=MRWFg30FmZQ) was really a life saver
+- I wanted to disable some of my form fields by default, that was possible thanks to [this post on Stackoverflow](https://stackoverflow.com/questions/66106617/how-to-use-field-disabled-in-django)
+- I wanted anonymous users to be able to browse the recipe list, but not be able to open the actual recipe page. Luckily I found out that you can add a login decorator, thanks to [this post from Stackoverflow](https://stackoverflow.com/questions/68810221/login-required-decorator-gives-object-has-no-attribute-user-error)
+- To set up the contact form, I looked at some other users' projects and browsed the web for a good solution - in the end I decided to use Google SMTP, which was help set up thanks to [this article on Medium](https://bshoo.medium.com/how-to-send-emails-with-python-django-through-google-smtp-server-for-free-22ea6ea0fb8e)
+
 
 ## Acknowledgements
 I would like to thank:

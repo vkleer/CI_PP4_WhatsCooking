@@ -351,6 +351,55 @@ The website has a total of 15 features:
 ## Validation
 
 ### HTML Validation
+The HTML of the application has been validated using W3C's Markup Validation Service. all of the pages pass with no errors or warnings.
+
+<details><summary>Screenshot of base template HTML validation</summary>
+    <img src="docs/validation/html/base-template-html-validation.JPG">
+</details>
+
+<details><summary>Screenshot of index HTML validation</summary>
+    <img src="docs/validation/html/index-html-validation.JPG">
+</details>
+
+<details><summary>Screenshot of login HTML validation</summary>
+    <img src="docs/validation/html/login-html-validation.JPG">
+</details>
+
+<details><summary>Screenshot of logout HTML validation</summary>
+    <img src="docs/validation/html/logout-html-validation.JPG">
+</details>
+
+<details><summary>Screenshot of create account HTML validation</summary>
+    <img src="docs/validation/html/signup-html-validation.JPG">
+</details>
+
+<details><summary>Screenshot of profile HTML validation</summary>
+    <img src="docs/validation/html/profile-html-validation.JPG">
+</details>
+
+<details><summary>Screenshot of meal planner page validation</summary>
+    <img src="docs/validation/html/meal-planner-html-validation.JPG">
+</details>
+
+<details><summary>Screenshot of create meal plan HTML validation</summary>
+    <img src="docs/validation/html/create-meal-plan-html-validation.JPG">
+</details>
+
+<details><summary>Screenshot of edit meal plan HTML validation</summary>
+    <img src="docs/validation/html/edit-meal-plan-html-validation.JPG">
+</details>
+
+<details><summary>Screenshot of recipe list HTML validation</summary>
+    <img src="docs/validation/html/recipe-list-html-validation.JPG">
+</details>
+
+<details><summary>Screenshot of recipe HTML validation</summary>
+    <img src="docs/validation/html/recipe-html-validation.JPG">
+</details>
+
+<details><summary>Screenshot of contact HTML validation</summary>
+    <img src="docs/validation/html/contact-html-validation.JPG">
+</details>
 
 ### CSS Validation
 

@@ -471,6 +471,56 @@ The Python code has been validated using [Pep8 Validation Service](http://pep8on
     </details>
 </details>
 
+### Accessibility
+The accessibility of the application has been measured using the Wave WebAIM web accessibility evaluation tool - all pages pass without errors.
+
+<details><summary>Screenshot of index page accessibility evaluation</summary>
+    <img src="docs/validation/wave/index-wave.JPG">
+</details>
+
+<details><summary>Screenshot of login page accessibility evaluation</summary>
+    <img src="docs/validation/wave/login-wave.JPG">
+</details>
+
+<details><summary>Screenshot of logout page accessibility evaluation</summary>
+    <img src="docs/validation/wave/logout-wave.JPG">
+</details>
+
+<details><summary>Screenshot of index page accessibility evaluation</summary>
+    <img src="docs/validation/wave/index-wave.JPG">
+</details>
+
+<details><summary>Screenshot of create account page accessibility evaluation</summary>
+    <img src="docs/validation/wave/signup-wave.JPG">
+</details>
+
+<details><summary>Screenshot of profile page accessibility evaluation</summary>
+    <img src="docs/validation/wave/profile-wave.JPG">
+</details>
+
+<details><summary>Screenshot of meal planner page accessibility evaluation</summary>
+    <img src="docs/validation/wave/meal-planner-wave.JPG">
+</details>
+
+<details><summary>Screenshot of create meal plan page accessibility evaluation</summary>
+    <img src="docs/validation/wave/create-meal-plan-wave.JPG">
+</details>
+
+<details><summary>Screenshot of edit meal plan page accessibility evaluation</summary>
+    <img src="docs/validation/wave/edit-meal-plan-wave.JPG">
+</details>
+
+<details><summary>Screenshot of recipe list page accessibility evaluation</summary>
+    <img src="docs/validation/wave/recipe-list-wave.JPG">
+</details>
+
+<details><summary>Screenshot of recipe page accessibility evaluation</summary>
+    <img src="docs/validation/wave/recipe-wave.JPG">
+</details>
+<details><summary>Screenshot of contact page accessibility evaluation</summary>
+    <img src="docs/validation/wave/contact-wave.JPG">
+</details>
+
 ## Testing
 
 ### Manual Testing - User Stories

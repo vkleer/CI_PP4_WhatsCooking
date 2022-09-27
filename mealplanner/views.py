@@ -75,9 +75,15 @@ class CreateMealPlan(generic.View):
             meal_plan = MealPlan(meal_planner=meal_planner, date=date)
             meal_plan.save()
             formset = MealOptionFormSet(request.POST, instance=meal_plan)
+        else:
+            messages.warning(request, "Form could not be validated - meal plan won't be created.")
+            return redirect(reverse('meal_planner'))
         if formset.is_valid():
             formset.save()
-            messages.success(request, 'Meal plan created succesfully.')
+            messages.success(request, "Successfully created new meal plan.")
+            return redirect(reverse('meal_planner'))
+        else:
+            messages.warning(request, "Formset could not be validated - meal plan won't be created.")
             return redirect(reverse('meal_planner'))
 
 
@@ -110,7 +116,7 @@ class DeleteMealPlan(generic.View):
     def post(self, request, meal_plan_id):
         meal_plan = MealPlan.objects.get(id=meal_plan_id)
         meal_plan.delete()
-        messages.info(
+        messages.success(
             request,
             'Meal plan deleted succesfully.'
         )

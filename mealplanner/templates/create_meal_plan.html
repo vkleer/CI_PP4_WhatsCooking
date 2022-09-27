@@ -3,7 +3,7 @@
 {% load crispy_forms_tags %}
 
 {% block header_title %}
-    Create meal plan {{ meal_plan.date|date:"d/m/Y" }}
+    Create meal plan
 {% endblock header_title %}
 {% block header_text %}
     Create your new meal plan, or click cancel to go back.
@@ -17,9 +17,13 @@
                     <hr>
                     {% csrf_token %}
                     {{ formset.management_form }}
+                    <p class="fw-bold">Meal plan date:</p>
                     {{ form | crispy }}
+                    {{ form | crispy }}
+                    {{ form | crispy }}
+                    <hr>
                     {% for form in formset %}
-                    <p><strong>Meal {{ forloop.counter }}:</strong></p>
+                    <p class="fw-bold">Meal {{ forloop.counter }}:</p>
                         {{ form | crispy }}
                         <hr>
                     {% endfor %}
@@ -31,7 +35,6 @@
         </div>
     </div>
     <script>
-        hideFormSelect();
         delFormDelBtns();
     </script>
 {% endblock content %}

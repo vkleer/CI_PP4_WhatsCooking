@@ -41,11 +41,6 @@ function getCalendarCells() {
     }
 }
 
-function hideFormSelect() {
-    dateSel = document.getElementById('id_date');
-    dateSel.setAttribute('hidden', '');
-}
-
 function delFormDelBtns() {
     delBtns = document.getElementsByClassName('mb-3');
     for (i = 0; i < delBtns.length; i++) {

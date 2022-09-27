@@ -1,7 +1,7 @@
 # What's Cooking?
 (Developer: Vilayat Kleer)
 
-![deployed-screenshot.JPG](docs/deployed-screenshot.JPG)
+![mockup-image.jpg](docs/mockup-image.jpg)
 
 [View the live website](https://herokuapp.com/)
 

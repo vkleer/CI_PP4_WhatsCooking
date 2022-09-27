@@ -7,6 +7,9 @@ from datetime import datetime, timedelta
 
 
 class MealPlanner(models.Model):
+    """
+    A class for the MealPlanner model
+    """
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
@@ -17,16 +20,25 @@ class MealPlanner(models.Model):
     )
 
     def __str__(self):
+        """
+        Returns a more readable name for each object
+        """
         return self.user.username
 
 
 class MealToMealPlan(models.Model):
+    """
+    A class for the MealToMealPlan model
+    """
     meal = models.ForeignKey(
         Meal, on_delete=models.CASCADE, blank=True, null=True
     )
     meal_plan = models.ForeignKey('MealPlan', on_delete=models.CASCADE)
 
     def __str__(self):
+        """
+        Returns a more readable name for each object
+        """
         return (
             '(' + str(self.id) + ') ' + str(self.meal) + ' to meal plan ' +
             datetime.strptime(
@@ -36,9 +48,9 @@ class MealToMealPlan(models.Model):
 
 
 class MealPlan(models.Model):
-    # date should take the date that has been picked on the view_meal_planner
-    # pageso that whenever the user clicks on a certain date, the correct
-    # associated MealPlan is fetched
+    """
+    A class for the MealPlan model
+    """
     meal_planner = models.ForeignKey(
         'MealPlanner', on_delete=models.CASCADE,
         related_name='meal_planner',
@@ -51,6 +63,9 @@ class MealPlan(models.Model):
         )
 
     def __str__(self):
+        """
+        Returns a more readable name for each object
+        """
         return (
             'Meal plan ' + datetime.strptime(
                 format(self.date), '%Y-%M-%d'
@@ -59,6 +74,9 @@ class MealPlan(models.Model):
 
 
 class Calendar(models.Model):
+    """
+    A class for the Calendar model
+    """
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
@@ -74,6 +92,9 @@ class Calendar(models.Model):
     day_seven = models.DateField(blank=True, null=True)
 
     def __str__(self):
+        """
+        Returns a more readable name for each object
+        """
         return 'Calendar for ' + self.user.username
 
     def clean(self):
@@ -92,6 +113,9 @@ class Calendar(models.Model):
 
 @receiver(post_save, sender=User)
 def create_models(sender, instance=None, created=False, **kwargs):
+    """
+    Creates a new MealPlanner and Calendar object on user creation
+    """
     if created:
         MealPlanner.objects.create(user=instance,)
         Calendar.objects.create(user=instance,)

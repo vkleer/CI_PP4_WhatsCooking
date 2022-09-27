@@ -2,6 +2,9 @@ from django import forms
 
 
 class SignupForm(forms.Form):
+    """
+    A class for the Signup form
+    """
     first_name = forms.CharField(
         max_length=30, label='First name',
         widget=forms.TextInput(attrs={'placeholder': 'First name'})

@@ -3,10 +3,16 @@ from .models import Calendar, MealPlan
 
 
 class DateInput(forms.DateInput):
+    """
+    A class for the DateInput field
+    """
     input_type = 'date'
 
 
 class CalendarForm(forms.ModelForm):
+    """
+    A class for the Calendar form
+    """
     class Meta:
         model = Calendar
         fields = ('picked_date',)
@@ -16,6 +22,9 @@ class CalendarForm(forms.ModelForm):
 
 
 class MealPlanForm(forms.ModelForm):
+    """
+    A class for the MealPlan form
+    """
     class Meta:
         model = MealPlan
         fields = ['date']

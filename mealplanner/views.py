@@ -9,6 +9,9 @@ from .forms import CalendarForm, MealPlanForm
 
 
 class MealPlannerView(generic.View):
+    """
+    A view class to display the meal planner
+    """
     def get(self, request):
         today = datetime.today()
         calendar = Calendar.objects.get(user=request.user)
@@ -50,6 +53,9 @@ class MealPlannerView(generic.View):
 
 
 class CreateMealPlan(generic.View):
+    """
+    A view class to display the meal plan creation page
+    """
     def get(self, request, meal_plan_date):
         MealOptionFormSet = inlineformset_factory(
             MealPlan, MealToMealPlan, fields=('meal',), extra=10, max_num=10
@@ -88,6 +94,9 @@ class CreateMealPlan(generic.View):
 
 
 class EditMealPlan(generic.View):
+    """
+    A view class to display the meal plan edit page
+    """
     def get(self, request, meal_plan_id):
         MealOptionFormSet = inlineformset_factory(
             MealPlan, MealToMealPlan, fields=('meal',), extra=9, max_num=10
@@ -113,6 +122,9 @@ class EditMealPlan(generic.View):
 
 
 class DeleteMealPlan(generic.View):
+    """
+    A view class to display the meal plan deletion modal
+    """
     def post(self, request, meal_plan_id):
         meal_plan = MealPlan.objects.get(id=meal_plan_id)
         meal_plan.delete()

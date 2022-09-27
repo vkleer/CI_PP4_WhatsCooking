@@ -6,6 +6,9 @@ from .models import Meal, IngredientToRecipe
 
 
 class MealList(generic.ListView):
+    """
+    A view class to display the recipe/meal list
+    """
     model = Meal
     queryset = Meal.objects.order_by('name')
     template_name = 'recipe_list.html'
@@ -13,6 +16,9 @@ class MealList(generic.ListView):
 
 @method_decorator(login_required, name='dispatch')
 class MealDetail(View):
+    """
+    A view class display each meal/recipe
+    """
     def get(self, request, meal_id):
         meal = Meal.objects.get(pk=meal_id)
         recipe_ingredients = IngredientToRecipe.objects.all()

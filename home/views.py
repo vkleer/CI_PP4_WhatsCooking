@@ -6,10 +6,16 @@ from django.core.mail import BadHeaderError, send_mail
 
 
 def HomePage(request):
+    """
+    A function to display the home page
+    """
     return render(request, 'index.html')
 
 
 def UserProfile(request, pk):
+    """
+    A function to display the users' profile
+    """
     user = User.objects.get(username=pk)
 
     if request.user == user:
@@ -26,6 +32,9 @@ def UserProfile(request, pk):
 
 
 def DeleteUser(request, pk):
+    """
+    A function to display the user deletion modal
+    """
     user = User.objects.get(username=pk)
 
     if request.method == 'POST':
@@ -38,6 +47,9 @@ def DeleteUser(request, pk):
 
 
 def Contact(request):
+    """
+    A function to display the contact form
+    """
     if request.method == 'POST':
         contact_message = request.POST['contact-message']
 

@@ -6,16 +6,25 @@ from .models import (
 
 
 class IngredientToRecipeInline(admin.TabularInline):
+    """
+    An admin TabularInline class for the IngredientToRecipeInline model
+    """
     model = IngredientToRecipe
     extra = 1
 
 
 class IngredientAdmin(admin.ModelAdmin):
+    """
+    An admin class for the IngredientAdmin model
+    """
     inlines = (IngredientToRecipeInline,)
 
 
 @admin.register(Meal)
 class MealAdmin(SummernoteModelAdmin):
+    """
+    An admin class for the MealAdmin model
+    """
     summernote_fields = ('description')
     search_fields = ['name']
     inlines = (IngredientToRecipeInline,)

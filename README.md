@@ -402,8 +402,26 @@ The HTML of the application has been validated using W3C's Markup Validation Ser
 </details>
 
 ### CSS Validation
+The CSS of the application has been validated using W3C's CSS Validation Service. It passed with no errors or warnings.
+
+<details><summary>Screenshot of CSS validation</summary>
+    <img src="docs/validation/css/style-css-validation.JPG">
+</details>
 
 ### JavaScript Validation
+The JavaScript of the application has been validated using JSHint. It passed with no errors or warnings.
+
+<details><summary>Screenshot of meal-planner script JSHint validation</summary>
+    <img src="docs/validation/js/meal-planner-jshint.JPG">
+</details>
+
+<details><summary>Screenshot of meal-search script JSHint validation</summary>
+    <img src="docs/validation/js/meal-search-jshint.JPG">
+</details>
+
+<details><summary>Screenshot of message-dismissal script JSHint validation</summary>
+    <img src="docs/validation/js/message-dismissal-jshint.JPG">
+</details>
 
 ### Python Validation
 The Python code has been validated using [Pep8 Validation Service](http://pep8online.com/) - no errors or warnings were found.

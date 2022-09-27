@@ -65,7 +65,7 @@
 
 ### Anonymous User
 1. As an anonymous user, I want to be able to view the home page, so I know what the application is about
-2. As an anonymous user, I want to be able to view the recipe list, so I know what the application has to offer
+2. As an anonymous user, I want to be able to view the recipe list, so I get a taste of what the application has to offer
 3. As an anonymous user, I want to be able to create an account, so I can start using the application
 
 ### Registered User
@@ -282,7 +282,13 @@ The website has a total of 15 features:
     <img src="docs/features/feature.JPG">
 </details>
 
-## Testing
+## Validation
+
+### HTML Validation
+
+### CSS Validation
+
+### JavaScript Validation
 
 ### Python Validation
 The Python code has been validated using [Pep8 Validation Service](http://pep8online.com/) - no errors or warnings were found.
@@ -291,18 +297,241 @@ The Python code has been validated using [Pep8 Validation Service](http://pep8on
     <img src="docs/validation/-pep8-validation.JPG">
 </details>
 
+## Testing
+
 ### Manual Testing - User Stories
 
-1. As a user, I want to be able to read the game instructions
+1. As an anonymous user, I want to be able to view the home page, so I know what the application is about
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Feature | Action | Expected result | Works as expected |
+| Home page | Go to the deployed application: [https://ci-pp4-whatscooking.herokuapp.com/](https://ci-pp4-whatscooking.herokuapp.com/)  | Be informed about the applications' purpose and features | Works as expected |
 
 <details><summary>Supporting Screenshots - User Story 1</summary>
     <img src="docs/testing/user-story-testing/user-story-01.png">
 </details>
 
+2. As an anonymous user, I want to be able to view the recipe list, so I get a taste of what the application has to offer
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Recipe list page | Click on the 'Recipe list' link in the navbar  | Be able to view the recipe list despite not having an account or being logged in | Works as expected |
+
+<details><summary>Supporting Screenshots - User Story 2</summary>
+    <img src="docs/testing/user-story-testing/user-story-02.gif">
+</details>
+
+3. As an anonymous user, I want to be able to create an account, so I can start using the application
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Create account page | Click on the 'Register' link in the navbar, the 'Create account' button on the homepage or the 'Create account' button on the recipe list page  | Be able to create an account | Works as expected |
+
+<details><summary>Supporting Screenshots - User Story 3</summary>
+    <img src="docs/testing/user-story-testing/user-story-03.png">
+</details>
+
+4. As a registered user, I want to be able to log in with my account
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Login page | Click on the 'Log in' link in the navbar | Be able to log in to my account | Works as expected |
+
+<details><summary>Supporting Screenshots - User Story 4</summary>
+    <img src="docs/testing/user-story-testing/user-story-04.png">
+</details>
+
+5. As a registered user, I want to be able to create a meal plan for a specific date 
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Meal planner page, add meal plan page | Click on the 'Meal planner' link in the navbar, then click any of the '+' buttons to create a meal plan for that date | Be able to create a meal plan | Works as expected |
+
+<details><summary>Supporting Screenshots - User Story 5</summary>
+    <img src="docs/testing/user-story-testing/user-story-05.png">
+</details>
+
+6. As a registered user, I want to be able to add meals to a meal plan
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Meal planner page, add meal plan page | Click on the 'Meal planner' link in the navbar, then click any of the '+' buttons to create a meal plan for that date, add meals to the meal plan | Be able to add meals to a meal plan | Works as expected |
+
+<details><summary>Supporting Screenshots - User Story 6</summary>
+    <img src="docs/testing/user-story-testing/user-story-06.png">
+</details>
+
+7. As a registered user, I want to be able to edit any of my meal plans
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Meal planner page, edit meal plan page | Click on the 'Meal planner' link in the navbar, then click on the pen button of the meal plan you want to edit | Be able to edit a meal plan | Works as expected |
+
+<details><summary>Supporting Screenshots - User Story 7</summary>
+    <img src="docs/testing/user-story-testing/user-story-07.png">
+</details>
+
+8. As a registered user, I want to be able to delete any of my meal plans
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Meal planner page | Click on the 'Meal planner' link in the navbar, then click any on the trash button of the meal plan you want to delete | Be able to delete a meal plan | Works as expected |
+
+<details><summary>Supporting Screenshots - User Story 8</summary>
+    <img src="docs/testing/user-story-testing/user-story-08.png">
+</details>
+
+9. As a registered user, I want to have a weekly overview of my meal plans in my meal planner
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Meal planner page | Click on the 'Meal planner' link in the navbar, then look at the weekly overview | Be able to see a weekly overview of meal plans | Works as expected |
+
+<details><summary>Supporting Screenshots - User Story 9</summary>
+    <img src="docs/testing/user-story-testing/user-story-09.png">
+</details>
+
+10. As a registered user, I want to be able to pick the first day of the week of my weekly overview
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Meal planner page | Click on the 'Meal planner' link in the navbar, then click on the calendar icon under 'Pick a date for day 1:', select a day, then click on the 'Pick day' button | Be able to see a new weekly overview, starting from the day I picked | Works as expected |
+
+<details><summary>Supporting Screenshots - User Story 10</summary>
+    <img src="docs/testing/user-story-testing/user-story-10.png">
+</details>
+
+11. As an registered user, I want to be able to view the recipe list
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Recipe list page | Click on the 'Recipe list' link in the navbar  | Be able to view the recipe list | Works as expected |
+
+<details><summary>Supporting Screenshots - User Story 11</summary>
+    <img src="docs/testing/user-story-testing/user-story-11.gif">
+</details>
+
+12. As a registered user, I want to be able to view the details of each recipe in the recipe list
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Recipe list page, recipe page | Click on the 'Recipe list' link in the navbar, then click on any of the recipes in the list | Be able to view the details of a recipe I clicked on | Works as expected |
+
+<details><summary>Supporting Screenshots - User Story 12</summary>
+    <img src="docs/testing/user-story-testing/user-story-12.png">
+</details>
+
+13. As a registered user, I want to be able to view my account details on my profile page
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Profile page | Click on your username in the navbar to open a dropdown menu, click on the 'Profile' link | Be able to view my account details | Works as expected |
+
+<details><summary>Supporting Screenshots - User Story 13</summary>
+    <img src="docs/testing/user-story-testing/user-story-13.png">
+</details>
+
+14. As a registered user, I want to be able to delete my account on my profile page
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Profile page | Click on your username in the navbar to open a dropdown menu, click on the 'Profile' link, then click on the 'Delete account button, confirm in the modal that you want to delete your account by clicking on the 'Yes, delete my account' button | Be able to delete my account | Works as expected |
+
+<details><summary>Supporting Screenshots - User Story 14</summary>
+    <img src="docs/testing/user-story-testing/user-story-14.png">
+</details>
+
+15. As a registered user, I want to be able to log out when I'm done
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Logout page | Click on your username in the navbar to open a dropdown menu, click on the 'Log out' link | Be able to log out of my account | Works as expected |
+
+<details><summary>Supporting Screenshots - User Story 15</summary>
+    <img src="docs/testing/user-story-testing/user-story-15.png">
+</details>
+
+16. As a registered user, I want to receive feedback after performing an important action
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Home page, login page, log out page, contact page, meal planner page, create meal page, edit meal page | Perform an important action, like logging in or out, creating a new meal plan etc. | Have a flash message displayed | Works as expected, as can be seen on each individual feature - the feedback message is highlighted in the screenshots |
+
+17. As the application owner, I want users to be able to filter recipes by meal type, diet type or by using the search bar
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Recipe list page | Click on the checkboxes underneath 'Meal type', select an option underneath 'Diet type, use the search bar to find a recipe, or combine them | Be able to gilter recipes | Works as expected |
+
+<details><summary>Supporting Screenshots - User Story 17</summary>
+    <img src="docs/testing/user-story-testing/user-story-17.gif">
+</details>
+
+18. As the application owner, I want to restrict most of the applications' functionality for anonymous users to encourage them to create an account
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Meal planner page, recipe page | Look at the navbar or try to open a recipe when not logged in | Have no meal planner option and be unable to open a recipe - will redirect to the login page | Works as expected |
+
+<details><summary>Supporting Screenshots - User Story 18</summary>
+    <img src="docs/testing/user-story-testing/user-story-18.png">
+</details>
+
+19. As the application owner, I want users to stay on the application when they receive an HTTP response of 400, 403, 404 or 500
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Custom HTTP response page 404 | Enter a non-existing page name at the end of the apps' url | Have a custom 404 error page be displayed | Works as expected |
+
+<details><summary>Supporting Screenshots - User Story 19</summary>
+    <img src="docs/testing/user-story-testing/user-story-19.png">
+</details>
+
+20. As the application owner, I want users to be able to contact me with a contact form
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Home page, footer, contact page | Scroll down on the home page and click on the 'Contact us' button or scroll down on any page and click the envelope icon in the footer | Be able to submit a contact form | Works as expected |
+
+<details><summary>Supporting Screenshots - User Story 20</summary>
+    <img src="docs/testing/user-story-testing/user-story-20.png">
+</details>
+
+21. As the application owner, I want users to be able to find me on GitHub
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Footer | Scroll down on any page and click the GitHub icon in the footer | Open a new tab to my GitHub page | Works as expected |
+
+<details><summary>Supporting Screenshots - User Story 21</summary>
+    <img src="docs/testing/user-story-testing/user-story-21.png">
+</details>
+
+22. As the application owner, I want the users' input on forms to be validated
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Login page, logout page, create account page, contact page | Try to submit form without filling out the required fields or enter invalid data, like a partial email address | Have a warning message display and be unable to submit the form | Works as expected |
+
+<details><summary>Supporting Screenshots - User Story 22</summary>
+    <img src="docs/testing/user-story-testing/user-story-22.png">
+</details>
+
+23. As the application owner, I want users to be able to navigate around the application easily
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Any page | Click on the corresponding link in the navbar, or the corresponding buttons on a parent page | Be taken to the correct page | Works as expected, as can be seen in all of the feature screenshots |
+
+24. As the application owner, I want to provide a responsive application for all devices
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| The whole application | Resize any page | Have the page be formatted correctly for any device | Works as expected |
+
+<details><summary>Supporting Screenshots - User Story 24</summary>
+    <img src="docs/testing/user-story-testing/user-story-24.png">
+</details>
 
 ### Automated Testing
 

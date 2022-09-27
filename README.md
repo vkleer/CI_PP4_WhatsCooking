@@ -239,6 +239,56 @@ Is used to set the cook time for each meal.
 Contains the following field:
 - cook_time
 
+### Wireframes
+
+<details><summary>Home</summary>
+    <img src="docs/wireframes/home-wireframe.png">
+</details>
+
+<details><summary>Login</summary>
+    <img src="docs/wireframes/login-wireframe.png">
+</details>
+
+<details><summary>Logout</summary>
+    <img src="docs/wireframes/logout-wireframe.png">
+</details>
+
+<details><summary>Create account</summary>
+    <img src="docs/wireframes/create-account-wireframe.png">
+</details>
+
+<details><summary>Profile</summary>
+    <img src="docs/wireframes/profile-wireframe.png">
+</details>
+
+<details><summary>Meal planner</summary>
+    <img src="docs/wireframes/meal-planner-wireframe.png">
+</details>
+
+<details><summary>Create meal plan</summary>
+    <img src="docs/wireframes/create-meal-plan-wireframe.png">
+</details>
+
+<details><summary>Edit meal plan</summary>
+    <img src="docs/wireframes/edit-meal-plan-wireframe.png">
+</details>
+
+<details><summary>Delete meal plan</summary>
+    <img src="docs/wireframes/delete-meal-plan-wireframe.png">
+</details>
+
+<details><summary>Recipe list</summary>
+    <img src="docs/wireframes/recipe-list-wireframe.png">
+</details>
+
+<details><summary>Recipe</summary>
+    <img src="docs/wireframes/recipe-wireframe.png">
+</details>
+
+<details><summary>Contact</summary>
+    <img src="docs/wireframes/contact-wireframe.png">
+</details>
+
 ## Technologies Used
 
 ### Languages

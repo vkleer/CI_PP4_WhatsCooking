@@ -178,6 +178,12 @@ The website has a total of 15 features:
 - Is responsive and works on all screen sizes
 - Covers user story **23** and **24**
 
+<details><summary>Screenshot of logo and navigation bar</summary>
+    <img src="docs/features/logo-and-navbar.JPG">
+    <img src="docs/features/logo-and-navbar-2.JPG">
+    <img src="docs/features/logo-and-navbar-3.JPG">
+</details>
+
 ### Footer
 - At the bottom of the page as is conventional, using the same colour as the navigation bar for consistency
 - Contains a link to my GitHub account, using a Font Awesome GitHub icon
@@ -185,8 +191,13 @@ The website has a total of 15 features:
 - Is present on every page
 - Covers user story **21** and **24**
 
+<details><summary>Screenshot of footer</summary>
+    <img src="docs/features/footer.JPG">
+</details>
+
 ### Flash messages
 - Flash messages are displayed to users when performing any important action, like creating, editing or deleting a meal plan or logging into their account, providing them with meaningful feedback
+- No screenshots provided here - all flash messages can be seen in action under [Manual Testing - User Stories](#manual-testing---user-stories)
 - Covers user story **16**
 
 ### Home page
@@ -194,6 +205,12 @@ The website has a total of 15 features:
 - Provides a brief overview of the applications' features
 - Contains call-to-action buttons to the meal planner (if users logged in, otherwise a 'Create account' button is shown), recipe list and contact form
 - Covers user story **1**, **18**
+
+<details><summary>Screenshots of home page</summary>
+    <img src="docs/features/home-page.JPG">
+    <img src="docs/features/home-page-2.JPG">
+    <img src="docs/features/home-page-3.JPG">
+</details>
 
 ### Create account page
 - Allows new users to create an account
@@ -204,6 +221,10 @@ The website has a total of 15 features:
 - Flash message is displayed after account has been created
 - Covers user story **3**, **22** and **16**
 
+<details><summary>Screenshot of create account page</summary>
+    <img src="docs/features/create-account-page.JPG">
+</details>
+
 ### Login page
 - Allows returning users to log in to their account
 - Users need to enter their username and password - an empty or semi-empty form cannot be submitted
@@ -212,10 +233,18 @@ The website has a total of 15 features:
 - Flash message is displayed after users have logged in
 - Covers user story **4**, **22** and **16**
 
+<details><summary>Screenshot of login page</summary>
+    <img src="docs/features/login-page.JPG">
+</details>
+
 ### Logout page
 - Allows logged in users to log out of their account
 - Flash message is displayed after users have logged out
 - Covers user story **15** and **16**
+
+<details><summary>Screenshot of logout page</summary>
+    <img src="docs/features/logout-page.JPG">
+</details>
 
 ### Profile page
 - Allows users to view their account details, listing their username, first name, email address and creation date
@@ -223,6 +252,10 @@ The website has a total of 15 features:
     - Instead of a separate page, a modal is used to confirm if the user wishes to delete their account
 - Flash message is displayed after users have deleted their account
 - Covers user story **13**, **14** and **16**
+
+<details><summary>Screenshot of profile page</summary>
+    <img src="docs/features/profile-page.JPG">
+</details>
 
 ### Meal planner page
 - Provides users with a weekly overview of their meal plans
@@ -234,11 +267,21 @@ The website has a total of 15 features:
     - Flash message is displayed after the user has deleted a specific meal plan
 - Covers user story **8**, **9**, **10** and **16**
 
-### Add meal plan page
+<details><summary>Screenshot of meal planner page</summary>
+    <img src="docs/features/meal-planner-page.JPG">
+</details>
+
+### Create meal plan page
 - Allows users to create a new meal plan for the selected date
 - Allows users to add up to 10 meals
 - Flash message is displayed after a meal plan has been created
 - Covers user story **6** and **16**
+
+<details><summary>Screenshots of create meal plan page</summary>
+    <img src="docs/features/create-meal-plan-page.JPG">
+    <img src="docs/features/create-meal-plan-page-2.JPG">
+    <img src="docs/features/create-meal-plan-page-3.JPG">
+</details>
 
 ### Edit meal plan page
 - Allows users to edit their selected, existing meal plan
@@ -246,10 +289,20 @@ The website has a total of 15 features:
 - Flash message is displayed after a meal plan had been updated
 - Covers user story **7** and **16**
 
+<details><summary>Screenshots of edit meal plan page</summary>
+    <img src="docs/features/edit-meal-plan-page.JPG">
+    <img src="docs/features/edit-meal-plan-page-2.JPG">
+    <img src="docs/features/edit-meal-plan-page-3.JPG">
+</details>
+
 ### Recipe list page
 - Allows both anonymous and registered users to browse all available recipes
 - Provides a link to the recipes' page, which only registered, logged in users can access
 - Covers user story **2**, **11**, **16** **18**
+
+<details><summary>Screenshot of recipe list page</summary>
+    <img src="docs/features/recipe-list-page.gif">
+</details>
 
 ### Recipe page
 - Contains the recipes' name preparation time, cooking time, meal type, diet type and image in the header
@@ -257,6 +310,10 @@ The website has a total of 15 features:
 - Contains the recipes' preparation instructions
 - Provides a button to take users back to the recipe list
 - Covers user story **12**
+
+<details><summary>Screenshot of recipe page</summary>
+    <img src="docs/features/recipe-page.png">
+</details>
 
 ### Recipe list filter
 - Allows both anonymous and registered users to filter all available recipes
@@ -266,6 +323,10 @@ The website has a total of 15 features:
 - Users can combine the meal type, diet type and search bar filters
 - Covers user story **17**
 
+<details><summary>Screenshot of recipe list filter</summary>
+    <img src="docs/features/recipe-list-filter.gif">
+</details>
+
 ### Contact page
 - Allows both anonymous and registered, logged in users to send me a message via a contact form
 - The contact form contains a name, email address and message field, all of which are required
@@ -273,13 +334,18 @@ The website has a total of 15 features:
 - Flash message is displayed after the form has been successfully submitted
 - Covers user story **20**, **22** and **16**
 
+<details><summary>Screenshots of contact page</summary>
+    <img src="docs/features/contact-page.JPG">
+    <img src="docs/features/contact-page-2.JPG">
+</details>
+
 ### Custom HTTP response pages (400, 403, 404 and 500)
 - Keeps users in the application flow if they encounter an error by displaying a custom HTTP response page
 - Contains a button that takes users back to the home page
 - Covers user story **19**
 
-<details><summary>Screenshot of feature</summary>
-    <img src="docs/features/feature.JPG">
+<details><summary>Screenshot of custom HTTP response page 404</summary>
+    <img src="docs/features/404-page.JPG">
 </details>
 
 ## Validation

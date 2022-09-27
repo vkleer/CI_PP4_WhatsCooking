@@ -411,23 +411,64 @@ The CSS of the application has been validated using W3C's CSS Validation Service
 ### JavaScript Validation
 The JavaScript of the application has been validated using JSHint. It passed with no errors or warnings.
 
-<details><summary>Screenshot of meal-planner script JSHint validation</summary>
+<details><summary>Screenshot of meal-planner.js JSHint validation</summary>
     <img src="docs/validation/js/meal-planner-jshint.JPG">
 </details>
 
-<details><summary>Screenshot of meal-search script JSHint validation</summary>
+<details><summary>Screenshot of meal-search.js JSHint validation</summary>
     <img src="docs/validation/js/meal-search-jshint.JPG">
 </details>
 
-<details><summary>Screenshot of message-dismissal script JSHint validation</summary>
+<details><summary>Screenshot of message-dismissal.js JSHint validation</summary>
     <img src="docs/validation/js/message-dismissal-jshint.JPG">
 </details>
 
 ### Python Validation
 The Python code has been validated using [Pep8 Validation Service](http://pep8online.com/) - no errors or warnings were found.
 
-<details><summary>Screenshot of .py PEP8 Validation</summary>
-    <img src="docs/validation/-pep8-validation.JPG">
+<details><summary>Screenshots of home Python files PEP8 Validation</summary>
+    <details><summary>home views</summary>
+        <img src="docs/validation/pep8/home-views-pep8-validation.JPG">
+    </details>
+    <details><summary>home urls</summary>
+        <img src="docs/validation/pep8/home-urls-pep8-validation.JPG">
+    </details>
+    <details><summary>home forms</summary>
+        <img src="docs/validation/pep8/home-forms-pep8-validation.JPG">
+    </details>
+</details>
+
+<details><summary>Screenshots of meal Python files PEP8 Validation</summary>
+    <details><summary>meal views</summary>
+        <img src="docs/validation/pep8/meal-views-pep8-validation.JPG">
+    </details>
+    <details><summary>meal urls</summary>
+        <img src="docs/validation/pep8/meal-urls-pep8-validation.JPG">
+    </details>
+    <details><summary>meal models</summary>
+        <img src="docs/validation/pep8/meal-models-pep8-validation.JPG">
+    </details>
+    <details><summary>meal admin</summary>
+        <img src="docs/validation/pep8/meal-admin-pep8-validation.JPG">
+    </details>
+</details>
+
+<details><summary>Screenshots of mealplanner Python files PEP8 Validation</summary>
+    <details><summary>mealplanner views</summary>
+        <img src="docs/validation/pep8/mealplanner-views-pep8-validation.JPG">
+    </details>
+    <details><summary>mealplanner urls</summary>
+        <img src="docs/validation/pep8/mealplanner-urls-pep8-validation.JPG">
+    </details>
+    <details><summary>mealplanner forms</summary>
+        <img src="docs/validation/pep8/mealplanner-forms-pep8-validation.JPG">
+    </details>
+    <details><summary>mealplanner models</summary>
+        <img src="docs/validation/pep8/mealplanner-models-pep8-validation.JPG">
+    </details>
+    <details><summary>mealplanner admin</summary>
+        <img src="docs/validation/pep8/mealplanner-admin-pep8-validation.JPG">
+    </details>
 </details>
 
 ## Testing

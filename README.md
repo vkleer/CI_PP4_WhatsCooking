@@ -471,7 +471,7 @@ The Python code has been validated using [Pep8 Validation Service](http://pep8on
     </details>
 </details>
 
-### Accessibility
+### Accessibility (Wave WebAIM)
 The accessibility of the application has been measured using the Wave WebAIM web accessibility evaluation tool - all pages pass without errors.
 
 <details><summary>Screenshot of index page accessibility evaluation</summary>
@@ -517,8 +517,56 @@ The accessibility of the application has been measured using the Wave WebAIM web
 <details><summary>Screenshot of recipe page accessibility evaluation</summary>
     <img src="docs/validation/wave/recipe-wave.JPG">
 </details>
+
 <details><summary>Screenshot of contact page accessibility evaluation</summary>
     <img src="docs/validation/wave/contact-wave.JPG">
+</details>
+
+### Performance (Google Lighthouse)
+The performance of the application has been measured with Google Lighthouse with either a perfect or near perfect score on each page.
+
+<details><summary>Screenshot of index page Lighthouse performance</summary>
+    <img src="docs/validation/lighthouse/index-lighthouse.JPG">
+</details>
+
+<details><summary>Screenshot of login page Lighthouse performance</summary>
+    <img src="docs/validation/lighthouse/login-lighthouse.JPG">
+</details>
+
+<details><summary>Screenshot of logout page Lighthouse performance</summary>
+    <img src="docs/validation/lighthouse/logout-lighthouse.JPG">
+</details>
+
+<details><summary>Screenshot of create account page Lighthouse performance</summary>
+    <img src="docs/validation/lighthouse/signup-lighthouse.JPG">
+</details>
+
+<details><summary>Screenshot of profile page Lighthouse performance</summary>
+    <img src="docs/validation/lighthouse/profile-lighthouse.JPG">
+</details>
+
+<details><summary>Screenshot of meal planner page Lighthouse performance</summary>
+    <img src="docs/validation/lighthouse/meal-planner-lighthouse.JPG">
+</details>
+
+<details><summary>Screenshot of create meal plan page Lighthouse performance</summary>
+    <img src="docs/validation/lighthouse/create-meal-plan-lighthouse.JPG">
+</details>
+
+<details><summary>Screenshot of edit meal plan page Lighthouse performance</summary>
+    <img src="docs/validation/lighthouse/edit-meal-plan-lighthouse.JPG">
+</details>
+
+<details><summary>Screenshot of recipe list page Lighthouse performance</summary>
+    <img src="docs/validation/lighthouse/recipe-list-lighthouse.JPG">
+</details>
+
+<details><summary>Screenshot of recipe page Lighthouse performance</summary>
+    <img src="docs/validation/lighthouse/recipe-lighthouse.JPG">
+</details>
+
+<details><summary>Screenshot of contact page Lighthouse performance</summary>
+    <img src="docs/validation/lighthouse/contact-lighthouse.JPG">
 </details>
 
 ## Testing

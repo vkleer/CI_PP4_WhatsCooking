@@ -137,6 +137,108 @@ The application contains the following pages:
 
 ## Technical Design
 
+### Database
+The backend of the application is built with Python and the Django framework, with a PostgreSQL database attached via Heroku. The models in the meal and mealplanner app are used to create the entire database along with the models from Allauth.
+
+<details><summary>Screenshot of database diagram</summary>
+    <img src="docs/db-diagram.JPG">
+</details>
+
+### Database models
+
+#### User model
+The User model comes from the Allauth library and contains information about the user.
+
+#### Calendar model
+The Calendar model is used to create the weekly overview on the meal_planner page.
+It contains the following fields:
+- user
+    - contains User as a foreign key
+- picked_date
+- day_one
+- day_two
+- day_three
+- day_four
+- day_five
+- day_six
+- day_seven
+
+#### MealPlanner model
+The MealPlanner model is used to save each users' meal plans.
+It contains the following fields:
+- user
+    - contains User as a foreign key
+- meal_plans
+    - contains MealPlan as a many to many field
+
+#### MealPlan model
+The MealPlan model is used to save and contain all the meals that have been added to it.
+It contains the following fields:
+- meal_planner
+    - contains MealPlanner as a foreign key
+- date
+- meal
+    - contains Meal as a many to many field through MealToMealPlan
+
+#### MealToMealPlan model
+Is used as an intermediate model between the MealPlan and Meal models.
+It contains the following fields:
+- meal
+    - contains Meal as a foreign key
+- meal_plan
+    - contains MealPlan as a foreign key
+
+#### Meal model
+Arguably the most important model as the whole application revolves around it. It is used to populate the meal plans, recipe list and recipe pages.
+It contains the following fields:
+- name
+- image
+- description
+- ingredients
+    contains Ingredient as a many to many field through IngredientToRecipe
+- type
+    - contains MealType as a foreign key
+- diet
+    - contains Diet as a foreign key
+- prep_time
+    - contains PrepTime as a foreign key
+- cook_time
+    - contains CookTime as a foreign key
+
+#### IngredientToRecipe model
+Is used as an intermediary model between the Meal and Ingredient models. The reason it is called 'IngredientToRecipe' and not 'IngredientToMeal' is because the ingredients are only used on the recipe page.
+Contains the following fields:
+- ingredient
+    - contains Ingredient as a foreign key
+- meal
+    - contains Meal as a foreign key
+- amount
+
+#### Ingredient model
+Is used to hold the ingredients that are used on the recipe pages.
+Contains the following field:
+- ingredient
+
+#### MealType model
+Is used to set the meal type of each meal.
+Contains the following field:
+- type
+
+#### Diet model
+Is used to set the diet type of each meal.
+Contains the following field:
+- diet
+
+#### PrepTime model
+Is used to set the prep time for each meal.
+Contains the following field:
+- prep_time
+
+#### CookTime model
+Is used to set the cook time for each meal.
+Contains the following field:
+- cook_time
+
 ## Technologies Used
 
 ### Languages

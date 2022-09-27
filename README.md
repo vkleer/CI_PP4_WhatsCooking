@@ -1003,12 +1003,12 @@ This website was deployed using Github Pages with the following steps:
 
 If you want to fork this repository, follow these steps:
 
-1. Go to the Github repository (https://github.com/vkleer/CI_PP1_TD)
+1. Go to the Github repository (https://github.com/vkleer/CI_PP4_WhatsCooking)
 2. Click on the 'Fork' button in the top right corner under the navigation bar
 
 If you want to clone this repository, follow these steps:
 
-1. Go to the Github repository (https://github.com/vkleer/CI_PP1_TD)
+1. Go to the Github repository (https://github.com/vkleer/CI_PP4_WhatsCooking)
 2. Click on the 'Code' button above the list of files
 3. Select your preferred way of cloning, I recommend using the 'GitHub CLI' option
 4. Under 'GitHub CLI', click on the copy button to copy the clone command
@@ -1033,6 +1033,21 @@ This application has been deployed using Heroku with the following steps:
 12. On the next page, under 'Choose a branch to deploy' you can choose the branch you want to deploy your app from
 13. Either click on the 'Enable Automatic Deploys' button under 'Automatic deploys' to have the app deploy automatically on each push you make to the branch, or click on the 'Deploy Branch' button under 'Manual deploy'
 14. Wait for the app to build and be deployed. Once the app is ready, a message will be displayed saying 'App was successfully deployed' along with a button which takes you to your newly deployed app
+
+### Google emails
+
+To send emails from your website using Google's SMTP server, the following steps are required:
+
+1. Preferable, create a new Gmail account
+2. Following the instructions in [this link](https://support.google.com/accounts/answer/6010255?hl=en), enable the less secure apps feature
+3. Under your settings.py, add the following settings:
+    - EMAIL_BACKEND = ‘django.core.mail.backends.smtp.EmailBackend’
+    - EMAIL_HOST = ‘smtp.gmail.com’
+    - EMAIL_USE_TLS = True
+    - EMAIL_PORT = 587
+    - EMAIL_HOST_USER = ‘your_account@gmail.com’ (I set this up in my env.py file and grab the variables using os.environ.get)
+    - EMAIL_HOST_PASSWORD = ‘your account’s password’(Again, this is set up in my env.py file and the variables are grabbed using os.environ.get)
+4. On Heroku, under settings, add two new Config Vars: EMAIL_HOST_USER and EMAIL_HOST_PASSWORD, using the same email address and password
 
 ## Credits
 
